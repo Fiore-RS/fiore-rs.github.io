@@ -19,7 +19,7 @@ export const fichas: Ficha[] = [
     descripcion: "Diseño y desarrollo UX/UI: trabajo seleccionado",
     categoria: "herramienta",
     anio: "2026",
-    url: "https://fiore-rs.github.io/Portfolio/",
+    url: "/Portfolio/",
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ export const fichas: Ficha[] = [
     descripcion: "Diario de lectura personal, sin ads ni rastreo",
     categoria: "app",
     anio: "2026",
-    url: "https://fiore-rs.github.io/teleo/",
+    url: "/teleo/",
   },
   {
     numero: "002",
@@ -36,6 +36,6 @@ export const fichas: Ficha[] = [
     descripcion: "Presupuesto personal por sobres, sin conexión bancaria",
     categoria: "app",
     anio: "2026",
-    url: "https://fiore-rs.github.io/sobres/",
+    url: "/sobres/",
   },
 ];

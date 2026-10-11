@@ -17,7 +17,7 @@ function App() {
 
       <footer className="mx-auto mt-14 max-w-3xl border-t border-dashed border-line pt-4">
         <p className="font-mono text-[11px] text-ink-muted">
-          Hecho con ❤️ por <a href="https://fiore-rs.github.io/Portfolio/" className="underline">Fiorella Salazar</a> — 2026
+          Hecho con ❤️ por <a href="/Portfolio/" className="underline">Fiorella Salazar</a> — 2026
         </p>
       </footer>
     </div>

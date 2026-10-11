@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://TU-USUARIO.github.io/index",
+  "homepage": "https://fiorers.dev",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
