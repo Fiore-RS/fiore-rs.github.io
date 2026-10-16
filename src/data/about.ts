@@ -56,3 +56,34 @@ export const experience: ExperienceEntry[] = [
 ]
 
 export const quote: Localized = { en: 'Sometimes, less is more.', es: 'A veces, menos es más.' }
+
+// Apartado "El logo" al final de Sobre mí: qué significa cada parte del símbolo.
+export const logoStory: {
+  title: Localized
+  intro: Localized
+  parts: { mark: string; name: Localized; text: Localized }[]
+} = {
+  title: { en: 'A flower made of code', es: 'Una flor hecha de código' },
+  intro: {
+    en: "Fiore means flower, so my brand starts there: a lotus, my favorite flower. Instead of drawing its petals, I built them out of what I use every day when I code.",
+    es: 'Fiore significa flor, así que mi marca empieza por ahí: un loto, mi flor favorita. En vez de dibujar sus pétalos, los armé con lo que uso todos los días al programar.',
+  },
+  parts: [
+    {
+      mark: '{ }',
+      name: { en: 'The braces', es: 'Las llaves' },
+      text: {
+        en: 'Two curly braces lying down, one inside the other, become the leaves.',
+        es: 'Dos llaves acostadas, una dentro de otra, forman las hojas.',
+      },
+    },
+    {
+      mark: '◆',
+      name: { en: 'The diamond', es: 'El diamante' },
+      text: {
+        en: 'The bud of the flower. It is the part that is still about to open.',
+        es: 'El botón de la flor. Es la parte que todavía está por abrirse.',
+      },
+    },
+  ],
+}

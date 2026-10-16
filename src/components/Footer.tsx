@@ -1,4 +1,5 @@
 import { site } from '../data/site'
+import Logo from './Logo'
 import { ui, useT } from '../i18n/ui'
 
 export default function Footer() {
@@ -13,8 +14,11 @@ export default function Footer() {
   return (
     <footer className="border-t border-borde/70">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-4 px-4 py-5 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
-        <p className="label text-bruma">
-          © {year} {site.nombre} <span className="text-borde">/</span> {t(ui.footer.role)}
+        <p className="label flex items-center gap-2.5 text-bruma">
+          <Logo mono className="h-3.5 w-auto text-bruma" />
+          <span>
+            © {year} {site.nombre} <span className="text-borde">/</span> {t(ui.footer.role)}
+          </span>
         </p>
         <ul className="flex flex-wrap gap-x-7 gap-y-2">
           {links.map((link) => (

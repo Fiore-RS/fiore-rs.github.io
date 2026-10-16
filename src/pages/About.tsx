@@ -2,7 +2,8 @@ import { Link } from 'react-router'
 import { ArrowRight, MapPin } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import SplitLayout from '../components/SplitLayout'
-import { bio, experience, quote } from '../data/about'
+import Logo from '../components/Logo'
+import { bio, experience, logoStory, quote } from '../data/about'
 import { ui, useT } from '../i18n/ui'
 
 /** Columna izquierda: la foto recortada sale por arriba de un arco orquídea, con el título debajo. */
@@ -75,6 +76,30 @@ export default function About() {
           </li>
         ))}
       </ol>
+
+      <section aria-labelledby="sobre-el-logo" className="mt-14">
+        <h2 className="label text-acento">{t(ui.about.logo)}</h2>
+        <div className="mt-5 grid gap-8 rounded-xl border border-borde bg-ciruela/50 p-6 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:p-8">
+          <Logo className="h-24 w-auto self-start text-crema sm:h-auto sm:w-full" />
+          <div>
+            <h3 className="display text-2xl leading-tight">{t(logoStory.title)}</h3>
+            <p className="mt-3 max-w-[38rem] text-[15px] leading-relaxed text-crema/75">{t(logoStory.intro)}</p>
+            <dl className="mt-6 grid gap-5 md:grid-cols-2">
+              {logoStory.parts.map((part) => (
+                <div key={part.mark} className="border-t border-borde pt-4">
+                  <dt className="flex items-baseline gap-2.5">
+                    <span className="font-mono text-[15px] text-acento" aria-hidden="true">
+                      {part.mark}
+                    </span>
+                    <span className="label text-crema">{t(part.name)}</span>
+                  </dt>
+                  <dd className="mt-2 text-[14px] leading-relaxed text-crema/70">{t(part.text)}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
 
       <Link
         to="/contact"

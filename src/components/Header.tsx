@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import LocalClock from './LocalClock'
+import Logo from './Logo'
 import { site } from '../data/site'
 import { ui, useT } from '../i18n/ui'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -76,7 +77,7 @@ export default function Header() {
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-4 sm:px-8 lg:px-10">
           <div className="flex items-center gap-4 xl:gap-5">
             <Link to="/" className="flex items-center gap-2.5" aria-label={`${site.nombre}, ${t(ui.nav.work)}`}>
-              <span className="h-2.5 w-2.5 rounded-full bg-acento" aria-hidden="true" />
+              <Logo className="h-[26px] w-auto text-crema" />
               <span className="display text-[17px] tracking-tight">{site.dominio}</span>
             </Link>
             <span className="hidden md:inline-flex lg:hidden xl:inline-flex">

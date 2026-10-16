@@ -63,6 +63,7 @@ export const ui = {
     location: { en: 'Alajuela, Costa Rica', es: 'Alajuela, Costa Rica' },
     seeProject: { en: 'See case study', es: 'Ver caso de estudio' },
     cta: { en: 'Work with me', es: 'Trabajemos juntos' },
+    logo: { en: 'The logo', es: 'El logo' },
   },
   skills: {
     title: { en: 'What I bring to a project', es: 'Lo que aporto a un proyecto' },
