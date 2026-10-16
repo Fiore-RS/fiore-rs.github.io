@@ -212,31 +212,31 @@ export const projects: Project[] = [
     slug: 'teleo',
     year: '2026',
     blurb: {
-      en: 'A private, ad-free reading journal with an ISBN scanner, reading streaks and a shareable public shelf.',
-      es: 'Diario de lectura privado y sin anuncios, con escáner de ISBN, rachas de lectura y un estante público para compartir.',
+      en: 'A private, ad-free reading journal: sagas, reviews, quotes, streaks, stats and a monthly and yearly recap to share.',
+      es: 'Diario de lectura privado y sin anuncios: sagas, reseñas, citas, rachas, estadísticas y un resumen del mes y del año para compartir.',
     },
     title: { en: 'Teleo', es: 'Teleo' },
-    type: { en: 'Web App', es: 'Aplicación Web' },
+    type: { en: 'Web App (PWA)', es: 'Aplicación Web (PWA)' },
     category: 'web',
     cover: 'teleo',
     timeline: { en: 'August 2026 - present time', es: 'Agosto 2026 - actualidad' },
     role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
-    tools: { en: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions', es: 'React, TypeScript, Tailwind CSS, Supabase, GitHub Actions' },
+    tools: { en: 'React, TypeScript, Tailwind CSS, Supabase, TanStack Query, Figma', es: 'React, TypeScript, Tailwind CSS, Supabase, TanStack Query, Figma' },
     overview: {
       en: [
-        'Teleo is a still developing private, ad-free reading journal: track books and sagas by status (reading, to-be-read, finished, abandoned, wishlist), log reviews with custom ratings, favorite quotes, and a favorite character card, keep a daily reading streak and an annual reading goal, and add books fast with a barcode/ISBN scanner.',
-        'Built as a React + TypeScript SPA on Vite and Tailwind, with Supabase handling auth, the Postgres database (row-level security scoped per user), and file storage for avatars. A public, shareable profile page (with its own QR code) lets other people browse someone\'s shelf and wishlist without an account.',
-        'Shipping it as a static SPA on GitHub Pages surfaced a string of production details a local dev server hides: client-side routes need a base path, a router basename, and a 404-to-index fallback to survive a hard refresh; a Supabase Edge Function silently fails from the browser without explicit CORS headers; a QR code hardcoded to one color disappears on a dark background; and a mobile-first layout needs an explicit centered, max-width frame to stay readable on a desktop-sized screen instead of stretching edge to edge.',
+        'Teleo is a private, ad-free reading journal that I design and build on my own, and that my friends use every day. It started because no reading app had exactly what I wanted: some were missing something, others had so many options they became overwhelming. It began as a simple log just for me, and since August 2026 it has shipped 15 versions, each with release notes written for the people who use it.',
+        'The app is organized like a notebook. La mesa shows what you are reading, your daily streak as a bookmark ribbon and your reading pace. El estante holds books and sagas on shelves, with filters by genre, mood, pace and tags. El cuaderno keeps reviews as ruled pages, quotes as notes with a folded corner, and content warnings. La bitácora gathers stats, purchases, and a monthly and yearly recap that can be shared as story cards. It also includes upcoming releases with a countdown, a Goodreads import and six color themes.',
+        'It is an installable PWA built with React, TypeScript and Tailwind CSS, with Supabase handling auth, the Postgres database (row-level security per user), file storage and an Edge Function for account deletion, and TanStack Query managing the data. Before writing any code I designed the whole app in Figma, 51 screens in light and dark mode, along with a written specification.',
       ],
       es: [
-        'Teleo es un diario de lectura privado y sin anuncios aun en desarrollo: seguimiento de libros y sagas por estado (leyendo, pendiente, terminado, abandonado, deseado), reseñas con calificaciones personalizadas, citas favoritas y una ficha de personaje favorito, racha diaria de lectura y meta anual, y una forma rápida de agregar libros escaneando el código de barras/ISBN.',
-        'Construida como una SPA de React + TypeScript sobre Vite y Tailwind, con Supabase manejando la autenticación, la base de datos Postgres (con seguridad a nivel de fila por usuario) y el almacenamiento de archivos para avatares. Una página de perfil pública y compartible (con su propio código QR) permite que otras personas vean el estante y la lista de deseados de alguien sin necesidad de cuenta.',
-        'Publicarla como SPA estática en GitHub Pages sacó a la luz una serie de detalles de producción que un servidor de desarrollo local esconde: las rutas del lado del cliente necesitan una ruta base, un basename en el router, y un 404 que redirija a index para sobrevivir a un refresh; una Edge Function de Supabase falla en silencio desde el navegador sin headers de CORS explícitos; un código QR con un color fijo desaparece sobre fondo oscuro; y un diseño pensado para móvil necesita un marco centrado y de ancho máximo explícito para no estirarse de borde a borde en una pantalla de escritorio.',
+        'Teleo es un diario de lectura privado y sin anuncios que diseño y desarrollo sola, y que mis amistades usan todos los días. Nació porque ninguna app de lectura tenía exactamente lo que yo quería: a algunas les faltaba algo y otras tenían tantas opciones que abrumaban. Empezó como un registro sencillo solo para mí y, desde agosto de 2026, ya lleva 15 versiones publicadas, cada una con notas de novedades escritas para quienes la usan.',
+        'La app está organizada como un cuaderno. La mesa muestra lo que estás leyendo, tu racha diaria como una cinta marcapáginas y tu ritmo de lectura. El estante guarda libros y sagas en repisas, con filtros por género, ánimo, ritmo y etiquetas. El cuaderno reúne las reseñas como hojas rayadas, las citas como notas con la esquina doblada y los avisos de contenido. La bitácora junta estadísticas, compras y un resumen del mes y del año que se comparte como tarjetas tipo historia. Además tiene lanzamientos con cuenta atrás, importación desde Goodreads y seis temas de color.',
+        'Es una PWA instalable hecha con React, TypeScript y Tailwind CSS, con Supabase para la autenticación, la base de datos Postgres (con seguridad a nivel de fila por usuario), el almacenamiento de archivos y una Edge Function para eliminar la cuenta, y TanStack Query para manejar los datos. Antes de escribir código diseñé la app completa en Figma, con 51 pantallas en modo claro y oscuro, junto con una especificación escrita.',
       ],
     },
     summary: {
-      en: 'This project pushed me past "it works on localhost" into real deployment ownership: wiring a CI/CD pipeline with GitHub Actions, debugging a CORS failure that only shows up cross-origin, and adapting a mobile-first design to hold up honestly on a desktop screen instead of just stretching to fit.',
-      es: 'Este proyecto me llevó más allá de "funciona en localhost" hacia una propiedad real del despliegue: configurar un pipeline de CI/CD con GitHub Actions, depurar una falla de CORS que solo aparece entre orígenes distintos, y adaptar un diseño pensado para móvil para que se sostenga honestamente en una pantalla de escritorio en vez de solo estirarse para llenarla.',
+      en: 'Teleo taught me to keep a real product going over time, not just launch it: shipping in versions with release notes anyone can understand, listening to the people who use it every day, and deciding what to add without losing the original idea of a calm app that is private by default and public by choice.',
+      es: 'Teleo me enseñó a sostener un producto real en el tiempo, no solo a lanzarlo: publicar por versiones con notas de novedades que cualquier persona entiende, escuchar a quienes la usan todos los días y decidir qué agregar sin perder la idea original de una app tranquila, privada por defecto y pública por decisión.',
     },
     liveUrl: {
       url: 'https://fiorers.dev/teleo/',
@@ -262,12 +262,12 @@ export const projects: Project[] = [
       en: [
         "Sobres is a personal budgeting app based on the BCR (Banco de Costa Rica) envelope system: it splits an income across the envelopes you choose, recalculating their priorities proportionally so they always add up to 100% of that income. It's a visual reference tool only, never connecting to a real bank or account.",
         'Each envelope keeps a running balance instead of working like a one-off calculator, so priorities, balances, and movement history persist across incomes. Built as an installable PWA with React 19, TypeScript, and Tailwind CSS v4, storing everything in localStorage with no backend, following the same pattern as Teleo.',
-        'Deployed to GitHub Pages via GitHub Actions, with drag-and-drop reordering of envelopes, manual balance correction that skips generating a movement, its own install icons and splash screens, and a clean first run with no sample data for new users.',
+        'Deployed to GitHub Pages via GitHub Actions. Envelopes can be reordered by dragging, and each one gets its own color, icon and an optional savings goal. Balances can be corrected by hand without creating a movement, the data can be exported and imported as a backup, and the theme can be light, dark or follow the system. It has its own install icons and splash screens, and starts clean, with no sample data.',
       ],
       es: [
         'Sobres es una app personal de presupuesto basada en el sistema de sobres del BCR (Banco de Costa Rica): reparte un ingreso entre los sobres que elegís, recalculando sus prioridades proporcionalmente para que siempre sumen el 100% de ese ingreso. Es una herramienta visual de referencia, no se conecta a ningún banco ni cuenta real.',
         'Cada sobre lleva un saldo acumulado en vez de funcionar como una calculadora puntual, así que las prioridades, saldos e historial de movimientos persisten entre ingresos. Construida como una PWA instalable con React 19, TypeScript y Tailwind CSS v4, guardando todo en localStorage sin backend, siguiendo el mismo patrón que Teleo.',
-        'Desplegada en GitHub Pages vía GitHub Actions, con reordenamiento de sobres por drag-and-drop, corrección manual de saldo sin generar un movimiento, íconos y splash screens propios para instalarla, y un primer arranque limpio sin datos de ejemplo para usuarios nuevos.',
+        'Desplegada en GitHub Pages vía GitHub Actions. Los sobres se reordenan arrastrándolos y cada uno puede tener su color, su ícono y una meta opcional. Los saldos se corrigen a mano sin generar un movimiento, los datos se exportan e importan como respaldo, y el tema puede ser claro, oscuro o el del sistema. Tiene íconos y splash screens propios para instalarla, y arranca limpia, sin datos de ejemplo.',
       ],
     },
     summary: {
