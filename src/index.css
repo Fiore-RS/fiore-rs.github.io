@@ -1,27 +1,83 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  /* Paleta del sitio, en canales RGB para que Tailwind pueda aplicar opacidad (bg-acento/50) */
+  :root {
+    --noche: 25 15 30; /* #190F1E */
+    --ciruela: 38 22 44; /* #26162C */
+    --borde: 66 42 76; /* #422A4C */
+    --crema: 248 238 245; /* #F8EEF5 */
+    --lila: 240 196 235; /* #F0C4EB */
+    --bruma: 178 150 180; /* #B296B4 */
+    --acento: 214 112 255; /* #D670FF orquídea */
+    --acento-claro: 228 150 255; /* #E496FF */
+    --sobre-acento: 25 15 30;
+    --menta: 93 211 158; /* #5DD39E */
+  }
+
+  html {
+    background-color: rgb(var(--noche));
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-noche font-sans text-crema antialiased;
+    /* un solo resplandor ámbar en la esquina, como luz de estudio */
+    background-image: radial-gradient(60rem 40rem at 105% -10%, rgb(var(--acento) / 0.16), transparent 60%),
+      radial-gradient(50rem 40rem at -10% 110%, rgb(var(--lila) / 0.06), transparent 60%);
+  }
+
+  ::selection {
+    background: rgb(var(--acento));
+    color: rgb(var(--noche));
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid rgb(var(--acento));
+    outline-offset: 3px;
+  }
 }
 
-body {
-  background-color: #ebe2d1;
-  color: theme("colors.ink");
+@layer components {
+  /* etiqueta técnica en mono: metadatos, filtros, navegación */
+  .label {
+    @apply font-mono text-[11px] uppercase tracking-[0.16em];
+  }
+
+  /* titular ancho y pesado */
+  .display {
+    @apply font-display font-extrabold uppercase;
+    font-stretch: 112%;
+    font-variation-settings: 'wdth' 112;
+    letter-spacing: -0.02em;
+  }
 }
 
-/* foco visible para navegación por teclado */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid theme("colors.terracota");
-  outline-offset: 2px;
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* barra de scroll delgada en el color del sitio */
+  .scroll-fino {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--borde)) transparent;
+  }
+  .scroll-fino:hover {
+    scrollbar-color: rgb(var(--acento) / 0.6) transparent;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

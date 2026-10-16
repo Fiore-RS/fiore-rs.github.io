@@ -1,27 +1,59 @@
-import { FichaGrid } from "./components/FichaGrid";
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation, useParams } from 'react-router'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+import Archive from './pages/Archive'
+import CaseStudy from './pages/CaseStudy'
+import About from './pages/About'
+import Skills from './pages/Skills'
+import Contact from './pages/Contact'
 
-function App() {
-  return (
-    <div className="min-h-screen px-4 py-14 sm:py-20">
-      <header className="mx-auto mb-10 max-w-3xl">
-        <p className="font-mono text-xs text-ink-muted">catálogo</p>
-        <h1 className="mt-1 font-display text-3xl font-medium text-ink sm:text-4xl">
-          Índice de proyectos y páginas
-        </h1>
-        <p className="mt-2 text-sm text-ink-soft">
-          Un fichero de todo lo que voy construyendo en desarrollo web, desde mi portfolio hasta apps.
-        </p>
-      </header>
-
-      <FichaGrid />
-
-      <footer className="mx-auto mt-14 max-w-3xl border-t border-dashed border-line pt-4">
-        <p className="font-mono text-[11px] text-ink-muted">
-          Hecho con ❤️ por <a href="/Portfolio/" className="underline">Fiorella Salazar</a> — 2026
-        </p>
-      </footer>
-    </div>
-  );
+/** /Portfolio/work/:slug → /work/:slug (si el proyecto ya no existe, el caso de estudio manda al Archivo). */
+function LegacyProject() {
+  const { slug } = useParams<{ slug: string }>()
+  return <Navigate to={`/work/${slug ?? ''}`} replace />
 }
 
-export default App;
+export default function App() {
+  const { pathname } = useLocation()
+
+  // cada página nueva empieza arriba
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  // en pantallas grandes, estas páginas ocupan exactamente la ventana (sin scroll de página)
+  const fitsViewport = ['/', '/archive', '/about', '/skills', '/contact'].includes(pathname)
+
+  return (
+    <div className={`flex min-h-screen flex-col overflow-x-clip ${fitsViewport ? 'fit:h-svh fit:min-h-0 fit:overflow-hidden' : ''}`}>
+      <a
+        href="#contenido"
+        className="label sr-only z-50 rounded bg-acento px-3 py-2 text-sobre-acento focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Saltar al contenido
+      </a>
+      <Header />
+      <main id="contenido" className="flex min-h-0 flex-1 flex-col">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/archive" element={<Archive />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/work/:slug" element={<CaseStudy />} />
+          {/* enlaces del Portfolio anterior (fiorers.dev/Portfolio/...) llevan a su equivalente nuevo */}
+          <Route path="/Portfolio" element={<Navigate to="/" replace />} />
+          <Route path="/Portfolio/work" element={<Navigate to="/archive" replace />} />
+          <Route path="/Portfolio/work/:slug" element={<LegacyProject />} />
+          <Route path="/Portfolio/hire" element={<Navigate to="/contact" replace />} />
+          <Route path="/Portfolio/*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  )
+}
