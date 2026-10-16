@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: { en: 'PyCon LATAM 2025', es: 'PyCon LATAM 2025' },
     type: { en: 'Brand Manual & Identity', es: 'Manual de Marca e Identidad' },
     category: 'branding',
-    image: '/projects/pycon-latam-2025/cover.png',
+    image: '/projects/pycon-latam-2025/cover.webp',
     timeline: { en: '3 weeks', es: '3 semanas' },
     role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
@@ -32,19 +32,19 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        image: '/projects/pycon-latam-2025/logo-grid.png',
+        image: '/projects/pycon-latam-2025/logo-grid.webp',
         alt: { en: 'PyCon LATAM 2025 imagotype construction grid', es: 'Retícula de construcción del imagotipo de PyCon LATAM 2025' },
       },
       {
-        image: '/projects/pycon-latam-2025/monochrome.png',
+        image: '/projects/pycon-latam-2025/monochrome.webp',
         alt: { en: 'PyCon LATAM 2025 monochrome logo version', es: 'Versión monocromática del logo de PyCon LATAM 2025' },
       },
       {
-        image: '/projects/pycon-latam-2025/signage.png',
+        image: '/projects/pycon-latam-2025/signage.webp',
         alt: { en: 'PyCon LATAM 2025 event signage', es: 'Señalización del evento PyCon LATAM 2025' },
       },
       {
-        image: '/projects/pycon-latam-2025/staff-shirts.png',
+        image: '/projects/pycon-latam-2025/staff-shirts.webp',
         alt: { en: 'PyCon LATAM 2025 staff shirts', es: 'Camisetas de staff de PyCon LATAM 2025' },
       },
     ],
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     title: { en: 'Pixmatic Studios', es: 'Pixmatic Studios' },
     type: { en: 'Brand Identity & Mascot', es: 'Identidad de Marca y Mascota' },
     category: 'branding',
-    image: '/projects/pixmatic-studios/cover.png',
+    image: '/projects/pixmatic-studios/cover.webp',
     timeline: { en: '6 weeks', es: '6 semanas' },
     role: { en: 'Personal Project — Solo Designer', es: 'Proyecto Personal — Diseñadora Única' },
     tools: {
@@ -87,19 +87,19 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        image: '/projects/pixmatic-studios/logo-formats.png',
+        image: '/projects/pixmatic-studios/logo-formats.webp',
         alt: { en: 'Pixmatic Studios logo formats and usage', es: 'Formatos y usos del logo de Pixmatic Studios' },
       },
       {
-        image: '/projects/pixmatic-studios/logo-colors.png',
+        image: '/projects/pixmatic-studios/logo-colors.webp',
         alt: { en: 'Pixmatic Studios logo color variations', es: 'Variaciones de color del logo de Pixmatic Studios' },
       },
       {
-        image: '/projects/pixmatic-studios/icon-colors.png',
+        image: '/projects/pixmatic-studios/icon-colors.webp',
         alt: { en: 'Pixmatic Studios icon color variations', es: 'Variaciones de color del ícono de Pixmatic Studios' },
       },
       {
-        image: '/projects/pixmatic-studios/mascot-coco.png',
+        image: '/projects/pixmatic-studios/mascot-coco.webp',
         alt: { en: 'Coco the sloth mascot character design', es: 'Diseño del personaje Coco, la mascota perezoso' },
       },
     ],
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     title: { en: 'Happy Home', es: 'Happy Home' },
     type: { en: 'Logo & Brand Identity', es: 'Logo e Identidad de Marca' },
     category: 'branding',
-    image: '/projects/happy-home/cover.png',
+    image: '/projects/happy-home/cover.webp',
     timeline: { en: '1 week', es: '1 semana' },
     role: { en: 'Freelance Graphic Designer', es: 'Diseñadora Gráfica Freelance' },
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
@@ -135,19 +135,19 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        image: '/projects/happy-home/logo-lockup.png',
+        image: '/projects/happy-home/logo-lockup.webp',
         alt: { en: 'Happy Home logo and icon lockup', es: 'Logo e ícono de Happy Home' },
       },
       {
-        image: '/projects/happy-home/icon-colors.png',
+        image: '/projects/happy-home/icon-colors.webp',
         alt: { en: 'Happy Home icon color variations', es: 'Variaciones de color del ícono de Happy Home' },
       },
       {
-        image: '/projects/happy-home/logo-colors.png',
+        image: '/projects/happy-home/logo-colors.webp',
         alt: { en: 'Happy Home full logo color variations', es: 'Variaciones de color del logo completo de Happy Home' },
       },
       {
-        image: '/projects/happy-home/keychains.png',
+        image: '/projects/happy-home/keychains.webp',
         alt: { en: 'Happy Home room key keychain mockups', es: 'Mockups de llaveros de llaves de Happy Home' },
       },
     ],
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     title: { en: 'Hack GB', es: 'Hack GB' },
     type: { en: 'Event Branding', es: 'Identidad de Evento' },
     category: 'branding',
-    image: '/projects/hack-gb/cover.png',
+    image: '/projects/hack-gb/cover.webp',
     timeline: { en: '1 week', es: '1 semana' },
     role: { en: 'Design Team Support', es: 'Apoyo al Equipo de Diseño' },
     tools: {
@@ -186,19 +186,19 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        image: '/projects/hack-gb/logo-colors.png',
+        image: '/projects/hack-gb/logo-colors.webp',
         alt: { en: 'Hack GB full logo color variations', es: 'Variaciones de color del logo completo de Hack GB' },
       },
       {
-        image: '/projects/hack-gb/logo-formats.png',
+        image: '/projects/hack-gb/logo-formats.webp',
         alt: { en: 'Hack GB logo and icon formats', es: 'Formatos del logo e ícono de Hack GB' },
       },
       {
-        image: '/projects/hack-gb/icon-colors.png',
+        image: '/projects/hack-gb/icon-colors.webp',
         alt: { en: 'Hack GB phoenix icon color variations', es: 'Variaciones de color del ícono fénix de Hack GB' },
       },
       {
-        image: '/projects/hack-gb/logo-colors-2.png',
+        image: '/projects/hack-gb/logo-colors-2.webp',
         alt: { en: 'Hack GB additional logo color variations', es: 'Variaciones de color adicionales del logo de Hack GB' },
       },
     ],
