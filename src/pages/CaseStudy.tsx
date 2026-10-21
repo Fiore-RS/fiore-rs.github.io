@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from 'react-router'
 import { AlertTriangle, ArrowLeft, ArrowRight, ArrowUpRight, FileDown } from 'lucide-react'
 import AppCover from '../components/AppCover'
 import ImageLightbox from '../components/ImageLightbox'
-import { getProjectBySlug, projects } from '../data/projects'
+import { featuredProjects, getProjectBySlug } from '../data/projects'
 import { catalogNumber } from '../lib/catalog'
 import { ui, useT } from '../i18n/ui'
 
@@ -16,8 +16,8 @@ export default function CaseStudy() {
 
   if (!project) return <Navigate to="/archive" replace />
 
-  const index = projects.findIndex((p) => p.slug === project.slug)
-  const next = projects[(index + 1) % projects.length]
+  const index = featuredProjects.findIndex((p) => p.slug === project.slug)
+  const next = featuredProjects[(index + 1) % featuredProjects.length]
 
   const details = [
     { label: ui.caseStudy.role, value: t(project.role) },
@@ -55,7 +55,7 @@ export default function CaseStudy() {
             ))}
           </dl>
 
-          {(project.liveUrl || project.pdf) && (
+          {(project.liveUrl || project.pdf || project.extraLinks?.length) && (
             <div className="mt-5 flex flex-col gap-2">
               {project.liveUrl && (
                 <a
@@ -68,6 +68,18 @@ export default function CaseStudy() {
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </a>
               )}
+              {project.extraLinks?.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="label flex h-11 items-center justify-center gap-2 rounded-md border border-borde px-4 font-medium text-crema transition-colors hover:border-acento/60"
+                >
+                  {t(link.label)}
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+              ))}
               {project.liveUrl && project.liveNote && (
                 <p className="flex gap-2 text-xs leading-relaxed text-bruma">
                   <AlertTriangle size={14} className="mt-0.5 shrink-0 text-acento" aria-hidden="true" />
@@ -103,7 +115,13 @@ export default function CaseStudy() {
             aria-label={`${t(ui.caseStudy.enlarge)}: ${t(project.title)}`}
             className="block w-full cursor-zoom-in"
           >
-            <img src={project.image} alt="" className="aspect-[16/9] w-full object-cover" />
+            {/* En pantallas medianas y grandes la portada es una franja 3:1, recortada desde el centro.
+                El lightbox muestra la imagen completa. */}
+            <img
+              src={project.image}
+              alt=""
+              className="aspect-[16/9] w-full object-cover object-center sm:aspect-[3/1]"
+            />
           </button>
         ) : project.cover ? (
           <div className="relative aspect-[16/9] sm:aspect-[21/9]">
@@ -137,7 +155,8 @@ export default function CaseStudy() {
                       src={item.image}
                       alt={t(item.alt)}
                       loading="lazy"
-                      className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                      style={{ aspectRatio: project.galleryAspect ?? '4 / 3' }}
+                      className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </button>
                 </li>

@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import FilterChips from '../components/FilterChips'
-import { projects } from '../data/projects'
+import { featuredProjects } from '../data/projects'
 import { site } from '../data/site'
 import { ui, useT } from '../i18n/ui'
 import { useCarousel } from '../lib/useCarousel'
@@ -14,7 +14,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
 export default function Home() {
   const { t } = useT()
   const [filter, setFilter] = useState<Filter>('all')
-  const visible = useMemo(() => filterProjects(projects, filter), [filter])
+  const visible = useMemo(() => filterProjects(featuredProjects, filter), [filter])
   const carousel = useCarousel(visible.length, filter)
   const [first, last] = site.nombre.split(' ')
 

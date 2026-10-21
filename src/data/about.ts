@@ -38,8 +38,8 @@ export const experience: ExperienceEntry[] = [
     years: { en: '2026', es: '2026' },
     role: { en: 'Design Team Support', es: 'Apoyo al Equipo de Diseño' },
     description: {
-      en: "Designed the phoenix logo and brand mark for UW-Green Bay's hackathon in one week, ahead of the sponsor outreach deadline.",
-      es: 'Diseñé el logo y la marca del fénix para el hackathon de UW-Green Bay en una semana, antes de la fecha límite de búsqueda de patrocinadores.',
+      en: "Designed the phoenix logo for UW-Green Bay's hackathon in one week, ahead of sponsor outreach. The event now uses it on stickers, keychains, shirts, official documents and hackgb.com.",
+      es: 'Diseñé el logo del fénix para el hackathon de UW-Green Bay en una semana, antes de la búsqueda de patrocinadores. El evento hoy lo usa en stickers, llaveros, camisas, documentos oficiales y hackgb.com.',
     },
     slug: 'hack-gb',
   },

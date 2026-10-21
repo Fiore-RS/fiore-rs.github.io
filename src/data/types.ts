@@ -29,10 +29,23 @@ export interface Project {
   tools: Localized
   overview: { en: string[]; es: string[] }
   gallery?: { image?: string; alt: Localized }[]
+  /**
+   * Proporción de los recuadros de la galería (valor CSS de aspect-ratio). Por defecto '4 / 3'.
+   * Todas las imágenes se recortan a esta forma en la galería; el lightbox muestra la imagen completa.
+   */
+  galleryAspect?: string
   summary: Localized
   /** Documento descargable (p. ej. el manual de marca en PDF). */
   pdf?: { path: string; label: Localized }
-  /** Enlace a la app en vivo. */
-  liveUrl?: { url: string; label: Localized }
+  /** Enlace externo: la app en vivo o, en branding, el sitio donde se usa la marca. */
+  liveUrl?: {
+    url: string
+    /** Texto del botón en el caso de estudio. */
+    label: Localized
+    /** Texto corto para la tarjeta y el archivo. Si falta, se usa "Abrir app". */
+    short?: Localized
+  }
   liveNote?: Localized
+  /** Enlaces externos adicionales, solo en el caso de estudio (botones secundarios). */
+  extraLinks?: { url: string; label: Localized }[]
 }

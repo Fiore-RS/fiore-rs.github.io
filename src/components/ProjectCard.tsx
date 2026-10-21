@@ -64,7 +64,7 @@ export default function ProjectCard({ project, eager = false }: { project: Proje
               rel="noreferrer"
               className="label inline-flex h-10 items-center gap-1.5 rounded-md border border-borde px-3.5 text-crema/85 transition-colors hover:border-acento/60 hover:text-crema"
             >
-              {t(ui.work.liveApp)}
+              {t(project.liveUrl.short ?? ui.work.liveApp)}
               <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           )}

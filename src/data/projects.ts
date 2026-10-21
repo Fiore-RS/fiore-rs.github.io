@@ -3,7 +3,8 @@ import type { Project } from './types'
 // Proyectos de fiorers.dev (portado del Portfolio anterior, sin Book Tracker).
 // Branding usa `image` + `gallery` (archivos en /public/projects/).
 // Las apps usan una portada generada (`cover`, ver AppCover.tsx) y `liveUrl` lleva a la app real.
-// El orden de este arreglo es el orden del carrusel.
+// El orden de este arreglo es cronológico y define los números de catálogo (ver lib/catalog.ts).
+// El orden del carrusel se define aparte en `featuredOrder`.
 export const projects: Project[] = [
   {
     id: '2',
@@ -52,6 +53,7 @@ export const projects: Project[] = [
       en: "My first freelance design project, and different from starting a brand from scratch. I had to work inside a logo and direction the team had already chosen, correct it, and extend it into a full manual and a set of physical applications, all while keeping it consistent enough to pass review before the event's August deadline.",
       es: 'Mi primer proyecto de diseño freelance, y distinto a crear una marca desde cero. Tuve que trabajar dentro de un logo y una dirección que el equipo ya había elegido, corregirlo, y extenderlo en un manual completo y un set de aplicaciones físicas, manteniendo la consistencia necesaria para pasar la revisión antes de la fecha límite de agosto.',
     },
+    galleryAspect: '16 / 9',
     pdf: {
       path: '/projects/pycon-latam-2025/brand-manual.pdf',
       label: { en: 'View Brand Manual (PDF)', es: 'Ver Manual de Marca (PDF)' },
@@ -161,8 +163,8 @@ export const projects: Project[] = [
     slug: 'hack-gb',
     year: '2026',
     blurb: {
-      en: 'A phoenix mark for UW-Green Bay\'s hackathon, delivered in one week ahead of sponsor outreach.',
-      es: 'Un fénix como marca del hackathon de UW-Green Bay, entregado en una semana antes de buscar patrocinadores.',
+      en: 'A phoenix mark for UW-Green Bay\'s hackathon, designed in one week and now on its stickers, keychains, shirts, official documents and website.',
+      es: 'Un fénix como marca del hackathon de UW-Green Bay, diseñado en una semana y hoy presente en stickers, llaveros, camisas, documentos oficiales y su sitio web.',
     },
     title: { en: 'Hack GB', es: 'Hack GB' },
     type: { en: 'Event Branding', es: 'Identidad de Evento' },
@@ -178,16 +180,56 @@ export const projects: Project[] = [
       en: [
         "HackGB is the University of Wisconsin-Green Bay's collegiate hackathon, a 24-hour weekend bringing together developers, hardware engineers, and designers. The event's design team needed the logo finished fast; they were about to launch their sponsor outreach campaign and couldn't wait.",
         'The mark centers on a phoenix, referencing UW-Green Bay\'s own mascot and school spirit, paired with the "Hack GB" wordmark. With sponsorship materials on a tight deadline, the priority was landing a strong, recognizable symbol in one week rather than exploring dozens of directions.',
+        'Once delivered, the logo became the face of the event. The team carried it onto stickers, keychains and shirts, onto the event\'s official documents, onto its website, hackgb.com, and onto its Devpost page, where participants submitted their projects.',
       ],
       es: [
         'HackGB es el hackathon universitario de la Universidad de Wisconsin-Green Bay, un fin de semana de 24 horas que reúne a desarrolladores, ingenieros de hardware y diseñadores. El equipo de diseño del evento necesitaba el logo terminado rápido; estaban por lanzar su campaña de búsqueda de patrocinadores y no podían esperar.',
         'La marca se centra en un fénix, en referencia a la mascota de UW-Green Bay, junto al texto "Hack GB". Con los materiales de patrocinio bajo una fecha límite ajustada, la prioridad fue lograr un símbolo fuerte y reconocible en una semana, en vez de explorar docenas de direcciones.',
+        'Una vez entregado, el logo se convirtió en la cara del evento. El equipo lo llevó a stickers, llaveros y camisas, a los documentos oficiales del evento, a su sitio web, hackgb.com, y a su página de Devpost, donde los participantes entregaron sus proyectos.',
       ],
     },
     gallery: [
       {
-        image: '/projects/hack-gb/logo-colors.webp',
-        alt: { en: 'Hack GB full logo color variations', es: 'Variaciones de color del logo completo de Hack GB' },
+        image: '/projects/hack-gb/event-stand.webp',
+        alt: {
+          en: 'Hack GB registration area at UW-Green Bay: a roll-up banner with the phoenix logo next to the welcome table with badges and lanyards',
+          es: 'Zona de registro de Hack GB en UW-Green Bay: un banner roll-up con el logo del fénix junto a la mesa de bienvenida con gafetes y cordones',
+        },
+      },
+      {
+        image: '/projects/hack-gb/event-team.webp',
+        alt: {
+          en: 'Hack GB organizing team in event shirts with the phoenix logo, in front of the "Welcome to HackGB" opening slide (photo: @hack.gb on Instagram)',
+          es: 'Equipo organizador de Hack GB con camisas del evento con el logo del fénix, frente a la diapositiva de bienvenida "Welcome to HackGB" (foto: @hack.gb en Instagram)',
+        },
+      },
+      {
+        image: '/projects/hack-gb/event-closing.webp',
+        alt: {
+          en: 'Hack GB participants and organizers together on stage under the "Thanks for attending HackGB" closing slide with the phoenix logo (photo: @hack.gb on Instagram)',
+          es: 'Participantes y organizadores de Hack GB juntos en el escenario bajo la diapositiva de cierre "Thanks for attending HackGB" con el logo del fénix (foto: @hack.gb en Instagram)',
+        },
+      },
+      {
+        image: '/projects/hack-gb/event-badges.webp',
+        alt: {
+          en: 'Hack GB badges with the phoenix logo, color-coded by role (mentor, sponsor, judge and hacker), on green lanyards (photo: @hack.gb on Instagram)',
+          es: 'Gafetes de Hack GB con el logo del fénix, con un color por rol (mentor, patrocinador, juez y hacker), en cordones verdes (foto: @hack.gb en Instagram)',
+        },
+      },
+      {
+        image: '/projects/hack-gb/event-shirts.webp',
+        alt: {
+          en: 'Hack GB organizers wearing the event shirts and badges with the phoenix logo (photo: @hack.gb on Instagram)',
+          es: 'Organizadores de Hack GB con las camisas y gafetes del evento con el logo del fénix (foto: @hack.gb en Instagram)',
+        },
+      },
+      {
+        image: '/projects/hack-gb/figma-vector.webp',
+        alt: {
+          en: 'Hack GB phoenix logo as an editable vector in the original Figma file, with its anchor points visible',
+          es: 'Logo fénix de Hack GB como vector editable en el archivo original de Figma, con sus puntos de anclaje visibles',
+        },
       },
       {
         image: '/projects/hack-gb/logo-formats.webp',
@@ -197,15 +239,22 @@ export const projects: Project[] = [
         image: '/projects/hack-gb/icon-colors.webp',
         alt: { en: 'Hack GB phoenix icon color variations', es: 'Variaciones de color del ícono fénix de Hack GB' },
       },
-      {
-        image: '/projects/hack-gb/logo-colors-2.webp',
-        alt: { en: 'Hack GB additional logo color variations', es: 'Variaciones de color adicionales del logo de Hack GB' },
-      },
     ],
     summary: {
-      en: "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly. A good exercise in delivering a clear, symbolic mark (the phoenix) quickly for a team I'd never worked with before.",
-      es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin. Un buen ejercicio para entregar rápido una marca clara y simbólica (el fénix) para un equipo con el que nunca había trabajado.',
+      en: "Designing under a hard sponsor-outreach deadline meant trusting my first strong direction instead of iterating endlessly. Seeing the phoenix later on stickers, keychains, shirts, official documents and the event website confirmed why that mattered: a mark built to be clear and simple holds up across every size and medium, from a small sticker to a full web page, for a team I'd never worked with before.",
+      es: 'Diseñar bajo una fecha límite estricta para la búsqueda de patrocinadores significó confiar en mi primera dirección fuerte en vez de iterar sin fin. Ver después el fénix en stickers, llaveros, camisas, documentos oficiales y el sitio web del evento confirmó por qué importaba: una marca pensada para ser clara y simple aguanta cualquier tamaño y medio, desde un sticker pequeño hasta una página web, para un equipo con el que nunca había trabajado.',
     },
+    liveUrl: {
+      url: 'https://hackgb.com',
+      label: { en: 'Visit Event Site', es: 'Ver Sitio del Evento' },
+      short: { en: 'Event site', es: 'Sitio del evento' },
+    },
+    extraLinks: [
+      {
+        url: 'https://hackgb-2026.devpost.com/project-gallery',
+        label: { en: 'View on Devpost', es: 'Ver en Devpost' },
+      },
+    ],
   },
   {
     id: '7',
@@ -279,6 +328,15 @@ export const projects: Project[] = [
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
     },
   },
+]
+
+/** Orden destacado: carrusel de la portada y "siguiente proyecto" en los casos de estudio. */
+const featuredOrder = ['hack-gb', 'teleo', 'pycon-latam-2025', 'pixmatic-studios', 'happy-home', 'sobres']
+
+export const featuredProjects: Project[] = [
+  ...featuredOrder.map((slug) => projects.find((p) => p.slug === slug)).filter((p): p is Project => !!p),
+  // Si se agrega un proyecto nuevo sin ponerlo en featuredOrder, aparece al final.
+  ...projects.filter((p) => !featuredOrder.includes(p.slug)),
 ]
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug)

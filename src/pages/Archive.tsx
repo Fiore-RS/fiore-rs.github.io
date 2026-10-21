@@ -73,7 +73,7 @@ export default function Archive() {
                       rel="noreferrer"
                       className="label inline-flex h-8 items-center gap-1.5 rounded-md border border-borde px-3 text-[10px] text-crema/85 transition-colors hover:border-acento/60 hover:text-crema"
                     >
-                      {t(ui.work.liveApp)}
+                      {t(project.liveUrl.short ?? ui.work.liveApp)}
                       <ArrowUpRight size={12} aria-hidden="true" />
                     </a>
                   )}
