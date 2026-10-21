@@ -62,7 +62,7 @@ export default function ProjectCard({ project, eager = false }: { project: Proje
               href={project.liveUrl.url}
               target="_blank"
               rel="noreferrer"
-              className="label inline-flex h-10 items-center gap-1.5 rounded-md border border-borde px-3.5 text-crema/85 transition-colors hover:border-acento/60 hover:text-crema"
+              className="label inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-md border border-borde px-3.5 text-crema/85 transition-colors hover:border-acento/60 hover:text-crema"
             >
               {t(project.liveUrl.short ?? ui.work.liveApp)}
               <ArrowUpRight size={14} aria-hidden="true" />
@@ -70,7 +70,7 @@ export default function ProjectCard({ project, eager = false }: { project: Proje
           )}
           <Link
             to={`/work/${project.slug}`}
-            className="label inline-flex h-10 items-center gap-1.5 rounded-md bg-acento px-3.5 font-medium text-sobre-acento transition-colors hover:bg-acento-claro"
+            className="label inline-flex h-10 items-center gap-1.5 whitespace-nowrap rounded-md bg-acento px-3.5 font-medium text-sobre-acento transition-colors hover:bg-acento-claro"
           >
             {t(ui.work.caseStudy)}
             <span className="sr-only">: {t(project.title)}</span>

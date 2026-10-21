@@ -247,7 +247,7 @@ export const projects: Project[] = [
     liveUrl: {
       url: 'https://hackgb.com',
       label: { en: 'Visit Event Site', es: 'Ver Sitio del Evento' },
-      short: { en: 'Event site', es: 'Sitio del evento' },
+      short: { en: 'Visit site', es: 'Ver sitio' },
     },
     extraLinks: [
       {
