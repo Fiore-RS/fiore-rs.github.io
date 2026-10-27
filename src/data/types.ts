@@ -46,6 +46,13 @@ export interface Project {
     short?: Localized
   }
   liveNote?: Localized
+  /** Cuenta de prueba pública para entrar a la app sin registrarse (p. ej. Teleo). */
+  demoAccess?: {
+    email: string
+    password: string
+    /** Aviso corto debajo, p. ej. que se reinicia cada noche. */
+    note: Localized
+  }
   /** Enlaces externos adicionales, solo en el caso de estudio (botones secundarios). */
   extraLinks?: { url: string; label: Localized }[]
 }

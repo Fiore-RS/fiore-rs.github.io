@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link, useNavigationType } from 'react-router'
 import { ArrowUpRight, FileDown } from 'lucide-react'
 import AppCover from '../components/AppCover'
 import FilterChips from '../components/FilterChips'
@@ -10,17 +10,90 @@ import { ui, useT } from '../i18n/ui'
 
 const categoryLabel = { branding: ui.work.branding, web: ui.work.web }
 
+/* Al volver de un caso de estudio (atrás del navegador), el Archivo regresa al mismo filtro y
+ * al mismo punto de la lista. Se guarda en sessionStorage: el scroll de la ventana (pantallas
+ * chicas) y el de la columna derecha (pantallas grandes, donde solo esa columna se desliza). */
+const FILTER_KEY = 'archive-filter'
+const SCROLL_KEY = 'archive-scroll'
+
+function readStored(key: string): string | null {
+  try {
+    return sessionStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+function writeStored(key: string, value: string) {
+  try {
+    sessionStorage.setItem(key, value)
+  } catch {
+    // Sin almacenamiento: al volver, el Archivo simplemente empieza arriba.
+  }
+}
+
 /** Catálogo completo de proyectos, del más reciente al más antiguo. */
 export default function Archive() {
   const { t } = useT()
-  const [filter, setFilter] = useState<Filter>('all')
+  const navigationType = useNavigationType()
+  // El filtro guardado solo se recupera al volver; entrar desde el menú empieza en "Todos".
+  const [filter, setFilter] = useState<Filter>(() =>
+    {
+      const stored = navigationType === 'POP' ? readStored(FILTER_KEY) : null
+      return stored === 'branding' || stored === 'web' ? stored : 'all'
+    },
+  )
   const list = useMemo(() => filterProjects(projectsByDate, filter), [filter])
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  function changeFilter(next: Filter) {
+    setFilter(next)
+    writeStored(FILTER_KEY, next)
+  }
+
+  // Guarda el scroll mientras se desliza (ventana y columna).
+  useEffect(() => {
+    const content = contentRef.current
+    let frame = 0
+    function save() {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        writeStored(SCROLL_KEY, JSON.stringify({ win: window.scrollY, col: content?.scrollTop ?? 0 }))
+      })
+    }
+    window.addEventListener('scroll', save, { passive: true })
+    content?.addEventListener('scroll', save, { passive: true })
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', save)
+      content?.removeEventListener('scroll', save)
+    }
+  }, [])
+
+  // Al volver, lo devuelve. Un cuadro después, porque App.tsx lleva cada página nueva arriba.
+  useEffect(() => {
+    if (navigationType !== 'POP') return
+    const raw = readStored(SCROLL_KEY)
+    if (!raw) return
+    let saved: { win: number; col: number }
+    try {
+      saved = JSON.parse(raw)
+    } catch {
+      return
+    }
+    const frame = requestAnimationFrame(() => {
+      window.scrollTo(0, saved.win)
+      if (contentRef.current) contentRef.current.scrollTop = saved.col
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [navigationType])
 
   return (
     <SplitLayout
+      contentRef={contentRef}
       aside={
         <PageHeader label={t(ui.nav.archive)} title={t(ui.archive.title)} intro={t(ui.archive.intro)}>
-          <FilterChips active={filter} onChange={setFilter} className="mt-8" />
+          <FilterChips active={filter} onChange={changeFilter} className="mt-8" />
         </PageHeader>
       }
     >

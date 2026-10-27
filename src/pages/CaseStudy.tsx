@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router'
-import { AlertTriangle, ArrowLeft, ArrowRight, ArrowUpRight, FileDown } from 'lucide-react'
+import { AlertTriangle, ArrowRight, ArrowUpRight, FileDown } from 'lucide-react'
 import AppCover from '../components/AppCover'
+import DemoAccess from '../components/DemoAccess'
 import ImageLightbox from '../components/ImageLightbox'
 import { featuredProjects, getProjectBySlug } from '../data/projects'
 import { catalogNumber } from '../lib/catalog'
@@ -28,14 +29,9 @@ export default function CaseStudy() {
 
   return (
     // key por proyecto: al ir al "siguiente proyecto" la página se vuelve a montar y repite la entrada
-    <article key={project.slug} className="mx-auto w-full max-w-[1440px] px-4 pb-20 pt-8 sm:px-8 lg:px-10 lg:pt-10">
-      <Link to="/" className="label inline-flex items-center gap-2 text-bruma transition-colors hover:text-acento">
-        <ArrowLeft size={14} aria-hidden="true" />
-        {t(ui.caseStudy.back)}
-      </Link>
-
+    <article key={project.slug} className="mx-auto w-full max-w-[1440px] px-4 pb-20 pt-12 sm:px-8 lg:px-10 lg:pt-16">
       {/* Encabezado */}
-      <header className="mt-8 grid animate-rise gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-16">
+      <header className="grid animate-rise gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-16">
         <div>
           <p className="label flex flex-wrap items-center gap-x-3 gap-y-1 text-acento">
             <span className="text-bruma">{catalogNumber(project.slug)}</span>
@@ -106,8 +102,13 @@ export default function CaseStudy() {
         </aside>
       </header>
 
+      {/* Cuenta de prueba (solo apps que la tienen) */}
+      {project.demoAccess && (
+        <DemoAccess demo={project.demoAccess} className="mt-10 animate-rise [animation-delay:60ms]" />
+      )}
+
       {/* Portada */}
-      <figure className="mt-12 animate-rise overflow-hidden rounded-xl border border-borde [animation-delay:120ms]">
+      <figure className={`${project.demoAccess ? 'mt-6' : 'mt-12'} animate-rise overflow-hidden rounded-xl border border-borde [animation-delay:120ms]`}>
         {project.image ? (
           <button
             type="button"

@@ -273,13 +273,13 @@ export const projects: Project[] = [
     tools: { en: 'React, TypeScript, Tailwind CSS, Supabase, TanStack Query, Figma', es: 'React, TypeScript, Tailwind CSS, Supabase, TanStack Query, Figma' },
     overview: {
       en: [
-        'Teleo is a private, ad-free reading journal that I design and build on my own, and that my friends use every day. It started because no reading app had exactly what I wanted: some were missing something, others had so many options they became overwhelming. It began as a simple log just for me, and since August 2026 it has shipped 15 versions, each with release notes written for the people who use it.',
-        'The app is organized like a notebook. La mesa shows what you are reading, your daily streak as a bookmark ribbon and your reading pace. El estante holds books and sagas on shelves, with filters by genre, mood, pace and tags. El cuaderno keeps reviews as ruled pages, quotes as notes with a folded corner, and content warnings. La bitácora gathers stats, purchases, and a monthly and yearly recap that can be shared as story cards. It also includes upcoming releases with a countdown, a Goodreads import and six color themes.',
+        'Teleo is a private, ad-free reading journal that I design and build on my own, and that my friends use every day. It started because no reading app had exactly what I wanted: some were missing something, others had so many options they became overwhelming. It began as a simple log just for me, and since August 2026 it has shipped 18 versions, each with release notes written for the people who use it.',
+        'The app is organized like a notebook. La mesa shows what you are reading, your daily streak as a bookmark ribbon and your reading pace. El estante holds books and sagas on shelves, with filters by genre, mood, pace and tags. El cuaderno keeps reviews as ruled pages, quotes as notes with a folded corner, and content warnings. La bitácora gathers stats, purchases, and a monthly and yearly recap that can be shared as story cards. It also includes upcoming releases with a countdown, a Goodreads import, six color themes, invitations with a QR code and a guided tutorial over the app itself.',
         'It is an installable PWA built with React, TypeScript and Tailwind CSS, with Supabase handling auth, the Postgres database (row-level security per user), file storage and an Edge Function for account deletion, and TanStack Query managing the data. Before writing any code I designed the whole app in Figma, 51 screens in light and dark mode, along with a written specification.',
       ],
       es: [
-        'Teleo es un diario de lectura privado y sin anuncios que diseño y desarrollo sola, y que mis amistades usan todos los días. Nació porque ninguna app de lectura tenía exactamente lo que yo quería: a algunas les faltaba algo y otras tenían tantas opciones que abrumaban. Empezó como un registro sencillo solo para mí y, desde agosto de 2026, ya lleva 15 versiones publicadas, cada una con notas de novedades escritas para quienes la usan.',
-        'La app está organizada como un cuaderno. La mesa muestra lo que estás leyendo, tu racha diaria como una cinta marcapáginas y tu ritmo de lectura. El estante guarda libros y sagas en repisas, con filtros por género, ánimo, ritmo y etiquetas. El cuaderno reúne las reseñas como hojas rayadas, las citas como notas con la esquina doblada y los avisos de contenido. La bitácora junta estadísticas, compras y un resumen del mes y del año que se comparte como tarjetas tipo historia. Además tiene lanzamientos con cuenta atrás, importación desde Goodreads y seis temas de color.',
+        'Teleo es un diario de lectura privado y sin anuncios que diseño y desarrollo sola, y que mis amistades usan todos los días. Nació porque ninguna app de lectura tenía exactamente lo que yo quería: a algunas les faltaba algo y otras tenían tantas opciones que abrumaban. Empezó como un registro sencillo solo para mí y, desde agosto de 2026, ya lleva 18 versiones publicadas, cada una con notas de novedades escritas para quienes la usan.',
+        'La app está organizada como un cuaderno. La mesa muestra lo que estás leyendo, tu racha diaria como una cinta marcapáginas y tu ritmo de lectura. El estante guarda libros y sagas en repisas, con filtros por género, ánimo, ritmo y etiquetas. El cuaderno reúne las reseñas como hojas rayadas, las citas como notas con la esquina doblada y los avisos de contenido. La bitácora junta estadísticas, compras y un resumen del mes y del año que se comparte como tarjetas tipo historia. Además tiene lanzamientos con cuenta atrás, importación desde Goodreads, seis temas de color, invitaciones con código QR y un tutorial sobre la misma app.',
         'Es una PWA instalable hecha con React, TypeScript y Tailwind CSS, con Supabase para la autenticación, la base de datos Postgres (con seguridad a nivel de fila por usuario), el almacenamiento de archivos y una Edge Function para eliminar la cuenta, y TanStack Query para manejar los datos. Antes de escribir código diseñé la app completa en Figma, con 51 pantallas en modo claro y oscuro, junto con una especificación escrita.',
       ],
     },
@@ -290,6 +290,14 @@ export const projects: Project[] = [
     liveUrl: {
       url: 'https://fiorers.dev/teleo/',
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
+    },
+    demoAccess: {
+      email: 'teleo@fiorers.dev',
+      password: 'teleo123',
+      note: {
+        en: 'A shared demo account with a sample library. Explore freely: it resets every night.',
+        es: 'Una cuenta de prueba compartida, con una biblioteca de ejemplo. Explora con libertad: se reinicia cada noche.',
+      },
     },
   },
   {

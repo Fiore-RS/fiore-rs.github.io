@@ -34,7 +34,6 @@ export const ui = {
     carouselLabel: { en: 'Selected work', es: 'Trabajo seleccionado' },
   },
   caseStudy: {
-    back: { en: 'Back to work', es: 'Volver al trabajo' },
     role: { en: 'Role', es: 'Rol' },
     timeline: { en: 'Timeline', es: 'Duración' },
     tools: { en: 'Tools', es: 'Herramientas' },
@@ -45,6 +44,11 @@ export const ui = {
     next: { en: 'Next project', es: 'Siguiente proyecto' },
     enlarge: { en: 'Enlarge image', es: 'Ampliar imagen' },
     close: { en: 'Close', es: 'Cerrar' },
+    demoTitle: { en: 'Try it without signing up', es: 'Pruébala sin registrarte' },
+    demoEmail: { en: 'Email', es: 'Correo' },
+    demoPassword: { en: 'Password', es: 'Contraseña' },
+    copy: { en: 'Copy', es: 'Copiar' },
+    copied: { en: 'Copied', es: 'Copiado' },
   },
   archive: {
     title: { en: 'All the work', es: 'Todo el trabajo' },
