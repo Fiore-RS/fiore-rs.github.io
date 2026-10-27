@@ -44,7 +44,7 @@ export const packageGroups: { title: Localized; packages: Package[] }[] = [
     ],
   },
   {
-    title: { en: 'Graphic design & branding', es: 'Diseño gráfico y branding' },
+    title: { en: 'Branding & visual identity', es: 'Branding e identidad visual' },
     packages: [
       {
         name: { en: 'Logo design', es: 'Diseño de logo' },
@@ -74,12 +74,50 @@ export const packageGroups: { title: Localized; packages: Package[] }[] = [
   },
 ]
 
+export const workProcess: { title: Localized; detail: Localized }[] = [
+  {
+    title: { en: 'First conversation', es: 'Conversación inicial' },
+    detail: {
+      en: 'You tell me about your idea, timeline and budget, and we figure out what your project needs.',
+      es: 'Me contás tu idea, plazos y presupuesto, y definimos juntos qué necesita tu proyecto.',
+    },
+  },
+  {
+    title: { en: 'Proposal', es: 'Propuesta' },
+    detail: {
+      en: 'I send you the scope, deliverables, timeline and price so everything is clear before we start.',
+      es: 'Te envío el alcance, los entregables, los tiempos y el precio, para que todo esté claro antes de empezar.',
+    },
+  },
+  {
+    title: { en: 'Kickoff', es: 'Inicio' },
+    detail: {
+      en: 'We confirm the agreement and work begins once the deposit is received.',
+      es: 'Confirmamos el acuerdo y el trabajo arranca al recibir el adelanto.',
+    },
+  },
+  {
+    title: { en: 'Design & development', es: 'Diseño y desarrollo' },
+    detail: {
+      en: 'I share progress along the way and we go through the included revision rounds: wireframes and a preview link for websites and apps, concepts and refinement for branding.',
+      es: 'Te muestro avances en el camino y hacemos las rondas de revisión incluidas: wireframes y un enlace de vista previa en webs y apps, conceptos y refinamiento en branding.',
+    },
+  },
+  {
+    title: { en: 'Delivery', es: 'Entrega' },
+    detail: {
+      en: 'With the final payment, you receive the final files or your site goes live, ready to use.',
+      es: 'Con el pago final recibís los archivos finales o tu sitio sale en línea, listo para usar.',
+    },
+  },
+]
+
 export const terms: { title: Localized; detail: Localized }[] = [
   {
     title: { en: 'Scope & revisions', es: 'Alcance y revisiones' },
     detail: {
-      en: 'Each package includes an agreed number of concepts and two rounds of revisions. Changes beyond the original scope are quoted separately.',
-      es: 'Cada paquete incluye un número acordado de conceptos y dos rondas de revisión. Los cambios fuera del alcance original se cotizan aparte.',
+      en: 'Each project includes an agreed number of concepts and two rounds of revisions. Changes beyond the original scope are quoted separately.',
+      es: 'Cada proyecto incluye un número acordado de conceptos y dos rondas de revisión. Los cambios fuera del alcance original se cotizan aparte.',
     },
   },
   {

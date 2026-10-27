@@ -3,7 +3,7 @@ import LocalClock from '../components/LocalClock'
 import PageHeader from '../components/PageHeader'
 import SplitLayout from '../components/SplitLayout'
 import { site } from '../data/site'
-import { availability, packageGroups, terms } from '../data/services'
+import { availability, terms, workProcess } from '../data/services'
 import { ui, useT } from '../i18n/ui'
 
 export default function Contact() {
@@ -61,32 +61,25 @@ export default function Contact() {
         </>
       }
     >
-      {/* Precios */}
+      {/* Proceso */}
       <div>
-        <h2 className="label text-acento">{t(ui.contact.pricing)}</h2>
+        <h2 className="label text-acento">{t(ui.contact.process)}</h2>
         <div className="mt-4">
-          <p className="max-w-[40rem] text-[16px] leading-relaxed text-crema/75">{t(ui.contact.pricingIntro)}</p>
-          {packageGroups.map((group) => (
-            <div key={group.title.es} className="mt-10">
-              <h3 className="display text-[1.6rem] leading-tight">{t(group.title)}</h3>
-              <ul className="mt-4 border-t border-borde">
-                {group.packages.map((pkg) => (
-                  <li
-                    key={pkg.name.es}
-                    className="grid gap-x-6 gap-y-1 border-b border-borde py-5 sm:grid-cols-[minmax(0,12rem)_7rem_minmax(0,1fr)]"
-                  >
-                    <p className="text-[17px] font-medium text-crema">{t(pkg.name)}</p>
-                    <p className="text-[17px] text-acento">
-                      <span className="label mr-1.5 text-[10px] text-bruma">{t(ui.contact.from)}</span>
-                      {pkg.price}
-                    </p>
-                    <p className="text-[15px] leading-relaxed text-crema/70">{t(pkg.description)}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          <p className="mt-5 text-sm text-bruma">{t(ui.contact.pricingNote)}</p>
+          <p className="max-w-[40rem] text-[16px] leading-relaxed text-crema/75">{t(ui.contact.processIntro)}</p>
+          <ol className="mt-6 border-t border-borde">
+            {workProcess.map((step, i) => (
+              <li
+                key={step.title.es}
+                className="grid gap-x-6 gap-y-1 border-b border-borde py-5 sm:grid-cols-[minmax(0,12rem)_minmax(0,1fr)]"
+              >
+                <p className="text-[16px] font-medium text-crema">
+                  <span className="label mr-2 text-[10px] text-acento">{String(i + 1).padStart(2, '0')}</span>
+                  {t(step.title)}
+                </p>
+                <p className="max-w-[44rem] text-[15px] leading-relaxed text-crema/70">{t(step.detail)}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
 

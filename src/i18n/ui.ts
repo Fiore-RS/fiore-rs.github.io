@@ -80,8 +80,8 @@ export const ui = {
   contact: {
     title: { en: "Let's work together", es: 'Trabajemos juntos' },
     intro: {
-      en: "I'm open to freelance work and collaborations in web design and development and in graphic design. Here's how to reach me, when I'm available, and a starting reference for pricing.",
-      es: 'Estoy abierta a trabajos freelance y colaboraciones en diseño y desarrollo web y en diseño gráfico. Aquí está cómo contactarme, cuándo estoy disponible y una referencia inicial de precios.',
+      en: "I'm open to freelance work and collaborations in web design and development and in branding & visual identity. Here's how to reach me, when I'm available, how I work, and my terms.",
+      es: 'Estoy abierta a trabajos freelance y colaboraciones en diseño y desarrollo web y en branding e identidad visual. Aquí está cómo contactarme, cuándo estoy disponible, cómo trabajo y mis términos.',
     },
     write: { en: 'Write to me', es: 'Escribime' },
     availability: { en: 'Availability', es: 'Disponibilidad' },
@@ -94,6 +94,11 @@ export const ui = {
     pricingNote: {
       en: 'Prices in US dollars, as a starting reference. They are not final quotes.',
       es: 'Precios en dólares estadounidenses, como referencia inicial. No son cotizaciones finales.',
+    },
+    process: { en: 'How I work', es: 'Cómo trabajo' },
+    processIntro: {
+      en: 'The same steps apply to websites, apps and branding projects.',
+      es: 'Los mismos pasos aplican para webs, apps y proyectos de branding.',
     },
     terms: { en: 'Terms of service', es: 'Términos de servicio' },
     termsIntro: {

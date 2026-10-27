@@ -123,7 +123,7 @@ export const projects: Project[] = [
     category: 'branding',
     image: '/projects/happy-home/cover.webp',
     timeline: { en: '1 week', es: '1 semana' },
-    role: { en: 'Freelance Graphic Designer', es: 'Diseñadora Gráfica Freelance' },
+    role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
     overview: {
       en: [
