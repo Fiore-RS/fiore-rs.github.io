@@ -5,7 +5,7 @@ export const site = {
   disponible: true,
   ciudad: 'Alajuela, CR',
   zonaHoraria: 'America/Costa_Rica',
-  correo: 'fiorella.rodsal5@gmail.com',
+  correo: 'contacto@fiorers.dev',
   links: {
     github: 'https://github.com/Fiore-RS',
     linkedin: 'https://www.linkedin.com/in/fiorella-salazar-7014a6225/',
