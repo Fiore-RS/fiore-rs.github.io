@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zobro</title>
+    <!--
+      Sobres ahora se llama Zobro y vive en /zobro/. Esta página manda a la
+      dirección nueva conservando la pantalla (#/historial, etc.). Los datos
+      no se pierden: se guardan por dominio (fiorers.dev), no por ruta.
+    -->
+    <script>
+      location.replace('/zobro/' + location.search + location.hash)
+    </script>
+    <meta http-equiv="refresh" content="0; url=/zobro/" />
+  </head>
+  <body>
+    <p>Sobres ahora se llama Zobro. <a href="/zobro/">Ir a Zobro</a></p>
+  </body>
+</html>

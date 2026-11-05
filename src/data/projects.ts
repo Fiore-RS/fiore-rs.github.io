@@ -350,7 +350,7 @@ export const projects: Project[] = [
       es: 'Diseñar Zobro significó traducir un modelo mental financiero real, el sistema de sobres del BCR, en reglas de interacción claras antes de escribir cualquier lógica de la aplicación: recálculo proporcional de prioridades para que siempre sumen 100%, redondeo por mayor residuo para que los montos sigan sumando exacto, y reordenamiento por drag-and-drop que respeta cómo las personas priorizan de verdad su dinero.',
     },
     liveUrl: {
-      url: 'https://fiorers.dev/sobres/',
+      url: 'https://fiorers.dev/zobro/',
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
     },
   },
