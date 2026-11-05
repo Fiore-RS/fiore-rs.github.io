@@ -78,7 +78,7 @@ function TeleoCover() {
   )
 }
 
-/* ─────────────────────────── Sobres ───────────────────────────
+/* ─────────────────────────── Zobro (slug: sobres) ───────────────────────────
    Green → celeste (the app's "economy" palette) with a tiled pattern
    of envelopes, and the app icon (an open envelope with three bills)
    front and center. */

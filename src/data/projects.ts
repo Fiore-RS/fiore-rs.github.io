@@ -326,7 +326,7 @@ export const projects: Project[] = [
       en: 'Personal budgeting with the BCR envelope system. A visual tool that never connects to a bank.',
       es: 'Presupuesto personal con el sistema de sobres del BCR. Una herramienta visual que nunca se conecta a un banco.',
     },
-    title: { en: 'Sobres', es: 'Sobres' },
+    title: { en: 'Zobro', es: 'Zobro' },
     type: { en: 'Web App (PWA)', es: 'Aplicación Web (PWA)' },
     category: 'web',
     cover: 'sobres',
@@ -335,19 +335,19 @@ export const projects: Project[] = [
     tools: { en: 'React, TypeScript, Tailwind CSS, Vite PWA', es: 'React, TypeScript, Tailwind CSS, Vite PWA' },
     overview: {
       en: [
-        "Sobres is a personal budgeting app based on the BCR (Banco de Costa Rica) envelope system: it splits an income across the envelopes you choose, recalculating their priorities proportionally so they always add up to 100% of that income. It's a visual reference tool only, never connecting to a real bank or account.",
+        "Zobro is a personal budgeting app based on the BCR (Banco de Costa Rica) envelope system: it splits an income across the envelopes you choose, recalculating their priorities proportionally so they always add up to 100% of that income. It's a visual reference tool only, never connecting to a real bank or account.",
         'Each envelope keeps a running balance instead of working like a one-off calculator, so priorities, balances, and movement history persist across incomes. Built as an installable PWA with React 19, TypeScript, and Tailwind CSS v4, storing everything in localStorage with no backend, following the same pattern as Teleo.',
         'Deployed to GitHub Pages via GitHub Actions. Envelopes can be reordered by dragging, and each one gets its own color, icon and an optional savings goal. Balances can be corrected by hand without creating a movement, the data can be exported and imported as a backup, and the theme can be light, dark or follow the system. It has its own install icons and splash screens, and starts clean, with no sample data.',
       ],
       es: [
-        'Sobres es una app personal de presupuesto basada en el sistema de sobres del BCR (Banco de Costa Rica): reparte un ingreso entre los sobres que elegís, recalculando sus prioridades proporcionalmente para que siempre sumen el 100% de ese ingreso. Es una herramienta visual de referencia, no se conecta a ningún banco ni cuenta real.',
+        'Zobro es una app personal de presupuesto basada en el sistema de sobres del BCR (Banco de Costa Rica): reparte un ingreso entre los sobres que elegís, recalculando sus prioridades proporcionalmente para que siempre sumen el 100% de ese ingreso. Es una herramienta visual de referencia, no se conecta a ningún banco ni cuenta real.',
         'Cada sobre lleva un saldo acumulado en vez de funcionar como una calculadora puntual, así que las prioridades, saldos e historial de movimientos persisten entre ingresos. Construida como una PWA instalable con React 19, TypeScript y Tailwind CSS v4, guardando todo en localStorage sin backend, siguiendo el mismo patrón que Teleo.',
         'Desplegada en GitHub Pages vía GitHub Actions. Los sobres se reordenan arrastrándolos y cada uno puede tener su color, su ícono y una meta opcional. Los saldos se corrigen a mano sin generar un movimiento, los datos se exportan e importan como respaldo, y el tema puede ser claro, oscuro o el del sistema. Tiene íconos y splash screens propios para instalarla, y arranca limpia, sin datos de ejemplo.',
       ],
     },
     summary: {
-      en: 'Designing Sobres meant translating a real financial mental model, the BCR envelope system, into clear interaction rules before writing any application logic: proportional recalculation of priorities so they always add up to 100%, rounding by largest remainder so amounts still sum exactly, and drag-and-drop reordering that stays honest to how people actually prioritize their money.',
-      es: 'Diseñar Sobres significó traducir un modelo mental financiero real, el sistema de sobres del BCR, en reglas de interacción claras antes de escribir cualquier lógica de la aplicación: recálculo proporcional de prioridades para que siempre sumen 100%, redondeo por mayor residuo para que los montos sigan sumando exacto, y reordenamiento por drag-and-drop que respeta cómo las personas priorizan de verdad su dinero.',
+      en: 'Designing Zobro meant translating a real financial mental model, the BCR envelope system, into clear interaction rules before writing any application logic: proportional recalculation of priorities so they always add up to 100%, rounding by largest remainder so amounts still sum exactly, and drag-and-drop reordering that stays honest to how people actually prioritize their money.',
+      es: 'Diseñar Zobro significó traducir un modelo mental financiero real, el sistema de sobres del BCR, en reglas de interacción claras antes de escribir cualquier lógica de la aplicación: recálculo proporcional de prioridades para que siempre sumen 100%, redondeo por mayor residuo para que los montos sigan sumando exacto, y reordenamiento por drag-and-drop que respeta cómo las personas priorizan de verdad su dinero.',
     },
     liveUrl: {
       url: 'https://fiorers.dev/sobres/',
