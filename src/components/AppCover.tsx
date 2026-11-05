@@ -80,7 +80,8 @@ function TeleoCover() {
 
 /* ─────────────────────────── Sobres ───────────────────────────
    Green → celeste (the app's "economy" palette) with a tiled pattern
-   of envelopes, and the app icon front and center. */
+   of envelopes, and the app icon (an open envelope with three bills)
+   front and center. */
 function SobresCover() {
   const id = useId().replace(/:/g, '')
   const envelope = (x: number, y: number) => (
@@ -106,17 +107,11 @@ function SobresCover() {
       </svg>
 
       <LogoSlot>
-        <svg viewBox="0 0 32 32" className="h-[52%] max-h-36 drop-shadow-xl">
-          <rect width="32" height="32" rx="8" fill="#f7f5f0" />
-          <path
-            d="M7 11a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V11Z"
-            fill="none"
-            stroke="#2f5a42"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          <path d="M7.5 10.5 16 17l8.5-6.5" fill="none" stroke="#2f5a42" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <img
+          src="/projects/sobres/logo-icon.svg"
+          alt=""
+          className="h-[52%] max-h-36 drop-shadow-xl"
+        />
       </LogoSlot>
     </div>
   )
