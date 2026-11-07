@@ -13,6 +13,8 @@ export default function AppCover({ variant }: { variant: AppCoverVariant }) {
       return <TeleoCover />
     case 'sobres':
       return <SobresCover />
+    case 'preordi':
+      return <PreordiCover />
   }
 }
 
@@ -112,6 +114,41 @@ function SobresCover() {
           alt=""
           className="h-[52%] max-h-36 drop-shadow-xl"
         />
+      </LogoSlot>
+    </div>
+  )
+}
+
+/* ─────────────────────────── Preordi ───────────────────────────
+   Navy (the app's marino) with a tiled pattern of little boxes, and the app icon
+   (a box on its way, with speed lines) front and center. */
+function PreordiCover() {
+  const id = useId().replace(/:/g, '')
+  const box = (x: number, y: number) => (
+    <g transform={`translate(${x} ${y})`} fill="none" stroke="#FFFDF8" strokeWidth="1.6" strokeLinejoin="round">
+      <rect y="6" width="32" height="22" rx="3" />
+      <rect x="-3" width="38" height="8" rx="2" />
+      <path d="M16 0v28" />
+    </g>
+  )
+  return (
+    <div
+      className="absolute inset-0"
+      style={{ background: 'radial-gradient(circle at 70% 25%, #2E4D74 0%, #203856 55%, #172A42 100%)' }}
+      aria-hidden="true"
+    >
+      <svg className="absolute inset-0 h-full w-full opacity-[0.1]">
+        <defs>
+          <pattern id={`box-${id}`} width="96" height="76" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+            {box(10, 8)}
+            {box(58, 46)}
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#box-${id})`} />
+      </svg>
+
+      <LogoSlot>
+        <img src="/projects/preordi/logo-icon.svg" alt="" className="w-[46%] max-w-64 drop-shadow-xl" />
       </LogoSlot>
     </div>
   )

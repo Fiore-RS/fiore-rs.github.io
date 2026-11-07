@@ -354,10 +354,56 @@ export const projects: Project[] = [
       label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
     },
   },
+  {
+    id: '10',
+    slug: 'preordi',
+    year: '2026',
+    blurb: {
+      en: 'Keeps my preorders in order: how much I still owe, what has to be paid each month and what is arriving soon.',
+      es: 'Ordena mis preórdenes: cuánto me falta pagar, cuánto necesito cada mes y qué está por llegar.',
+    },
+    title: { en: 'Preordi', es: 'Preordi' },
+    type: { en: 'Web App (PWA)', es: 'Aplicación Web (PWA)' },
+    category: 'web',
+    cover: 'preordi',
+    timeline: { en: 'November 2026', es: 'Noviembre 2026' },
+    role: { en: 'Solo Designer & Developer', es: 'Diseñadora y Desarrolladora Única' },
+    tools: { en: 'React, TypeScript, Tailwind CSS, Vite PWA, IndexedDB, Vitest', es: 'React, TypeScript, Tailwind CSS, Vite PWA, IndexedDB, Vitest' },
+    overview: {
+      en: [
+        'Like Zobro, Preordi started with a habit I wanted to fix: how I handle my preorders of books, figures and manga. It was too easy to forget when something was supposed to arrive or when I had to pay what was left, and if there was a shipping fee I would often forget to add it to the amount. I also needed help knowing how much money I had to keep available, no matter what, so I would never fall behind on a payment.',
+        'Each preorder keeps its price, its extra costs like shipping, the deposit and every payment made, so the remaining balance is always up to date. The estimated arrival can be an exact day, a week or a month, and changes to it are kept as a history. Home shows how much has to be paid each month and what is arriving next, with alerts for anything overdue. There is also a wishlist with the total it would cost, a history with what was spent by category, and cancellations with their refunds.',
+        'It is an installable PWA built with React 19, TypeScript and Tailwind CSS v4, with no backend: the data lives on the phone in localStorage and the photos in IndexedDB, and everything can be exported and imported as a single .zip backup. The calculation logic is covered by tests with Vitest. I also designed its identity: a five-color palette, an icon of a box on its way, a loading screen that matches the iOS splash screens, and light and dark mode.',
+      ],
+      es: [
+        'Igual que con Zobro, Preordi nació de algo que quería mejorar: la manera de manejar mis preórdenes de libros, figuras y manga. Se me hacía muy fácil olvidar la fecha en la que debían llegar o en la que tenía que pagar lo que faltaba, y si había que pagar un envío, se me pasaba sumarlo al monto. De paso, necesitaba una ayuda para calcular cuánto dinero debía tener disponible sí o sí, para no atrasarme con los pagos.',
+        'Cada preorden guarda su precio, sus costos extra como el envío, el depósito y cada pago hecho, así el saldo pendiente siempre está al día. La llegada estimada puede ser un día exacto, una semana o un mes, y sus cambios quedan como historial. El inicio muestra cuánto hay que pagar cada mes y qué es lo próximo en llegar, con avisos de lo que ya se atrasó. Además tiene una lista de deseos con lo que costaría todo, un historial con lo gastado por categoría y las cancelaciones con sus reembolsos.',
+        'Es una PWA instalable hecha con React 19, TypeScript y Tailwind CSS v4, sin backend: los datos viven en el teléfono, en localStorage, y las fotos en IndexedDB, y todo se exporta e importa como un solo respaldo .zip. La lógica de los cálculos está cubierta con pruebas en Vitest. También diseñé su identidad: una paleta de cinco colores, un ícono de una caja en camino, una pantalla de carga que coincide con los splash de iOS, y modo claro y oscuro.',
+      ],
+    },
+    gallery: [
+      {
+        image: '/projects/preordi/app-icon.webp',
+        alt: { en: 'Preordi app icon at different sizes, from the home screen to the browser tab', es: 'Ícono de la app Preordi en distintos tamaños, de la pantalla de inicio a la pestaña del navegador' },
+      },
+      {
+        image: '/projects/preordi/palette.webp',
+        alt: { en: 'Preordi color palette: orange, yellow, paper, sky blue and navy', es: 'Paleta de Preordi: naranja, amarillo, papel, celeste y marino' },
+      },
+    ],
+    summary: {
+      en: 'Preordi taught me to start from the money and the dates, not from the screens: first deciding exactly how a balance, an overdue arrival or a monthly amount is calculated, testing those rules, and only then designing a calm interface that answers at a glance how much I need and when.',
+      es: 'Preordi me enseñó a empezar por el dinero y las fechas, no por las pantallas: primero decidir exactamente cómo se calcula un saldo, una llegada atrasada o lo que toca pagar cada mes, probar esas reglas, y solo después diseñar una interfaz tranquila que responda de un vistazo cuánto necesito y cuándo.',
+    },
+    liveUrl: {
+      url: 'https://fiorers.dev/preordi/',
+      label: { en: 'View Live Site', es: 'Ver Sitio en Vivo' },
+    },
+  },
 ]
 
 /** Orden destacado: carrusel de la portada y "siguiente proyecto" en los casos de estudio. */
-const featuredOrder = ['hack-gb', 'teleo', 'pycon-latam-2025', 'pixmatic-studios', 'happy-home', 'sobres']
+const featuredOrder = ['hack-gb', 'teleo', 'pycon-latam-2025', 'pixmatic-studios', 'happy-home', 'sobres', 'preordi']
 
 export const featuredProjects: Project[] = [
   ...featuredOrder.map((slug) => projects.find((p) => p.slug === slug)).filter((p): p is Project => !!p),

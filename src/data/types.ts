@@ -1,7 +1,7 @@
 export type ProjectCategory = 'branding' | 'web'
 
 /** Portadas generadas (SVG/CSS) para las apps — ver components/AppCover.tsx. */
-export type AppCoverVariant = 'teleo' | 'sobres'
+export type AppCoverVariant = 'teleo' | 'sobres' | 'preordi'
 
 export interface Localized {
   en: string
