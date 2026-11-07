@@ -1,5 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#2f5a42"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="86 104 340 316">
   <path d="M104 250 L256 134 L408 250 Z" fill="#e3ded2" stroke="#e3ded2" stroke-width="16" stroke-linejoin="round"/>
   <rect x="96" y="242" width="320" height="170" rx="24" fill="#cfc9bc"/>
   <g transform="rotate(-15 256 392)"><rect x="146" y="150" width="220" height="130" rx="12" fill="#4a8fb3"/><rect x="160" y="164" width="192" height="102" rx="7" fill="none" stroke="#f7f5f0" stroke-opacity="0.55" stroke-width="6"/><circle cx="314" cy="204" r="20" fill="none" stroke="#f7f5f0" stroke-opacity="0.55" stroke-width="6"/></g>
