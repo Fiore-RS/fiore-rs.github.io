@@ -21,12 +21,15 @@ export default function ProjectCard({ project, eager = false }: { project: Proje
       {/* en modo `fit` la imagen se encoge (recortando arriba y abajo) si la ventana es baja */}
       <div className="relative aspect-[16/9] overflow-hidden border-b border-borde fit:min-h-[6rem] fit:shrink">
         {project.image ? (
-          <img
-            src={project.image}
-            alt=""
-            loading={eager ? 'eager' : 'lazy'}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-          />
+          // el acercamiento va en un contenedor aparte para no pisar la escala del hover
+          <div className="absolute inset-0" style={project.coverZoom ? { transform: `scale(${project.coverZoom})` } : undefined}>
+            <img
+              src={project.image}
+              alt=""
+              loading={eager ? 'eager' : 'lazy'}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
+          </div>
         ) : project.cover ? (
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
             <AppCover variant={project.cover} />

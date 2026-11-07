@@ -111,7 +111,13 @@ export default function Archive() {
               {/* miniatura */}
               <div className="relative aspect-[16/10] self-start overflow-hidden rounded-md border border-borde">
                 {project.image ? (
-                  <img src={project.image} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                  <img
+                    src={project.image}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    style={project.coverZoom ? { transform: `scale(${project.coverZoom})` } : undefined}
+                  />
                 ) : project.cover ? (
                   <div className="absolute inset-0 origin-top-left scale-[0.5] [height:200%] [width:200%]">
                     <AppCover variant={project.cover} />

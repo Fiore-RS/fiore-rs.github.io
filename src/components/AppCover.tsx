@@ -82,7 +82,8 @@ function TeleoCover() {
 
 /* ─────────────────────────── Zobro (slug: sobres) ───────────────────────────
    Green → celeste (the app's "economy" palette) with a tiled pattern
-   of envelopes, and the app icon (an open envelope with three bills)
+   of envelopes, and the logo (an open envelope with three bills, without
+   the install icon’s background)
    front and center. */
 function SobresCover() {
   const id = useId().replace(/:/g, '')
@@ -112,7 +113,7 @@ function SobresCover() {
         <img
           src="/projects/sobres/logo-icon.svg"
           alt=""
-          className="h-[52%] max-h-36 drop-shadow-xl"
+          className="h-[56%] max-h-44 drop-shadow-xl"
         />
       </LogoSlot>
     </div>

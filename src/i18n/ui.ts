@@ -83,12 +83,12 @@ export const ui = {
       en: "I'm open to freelance work and collaborations in web design and development and in branding & visual identity. Here's how to reach me, when I'm available, how I work, and my terms.",
       es: 'Estoy abierta a trabajos freelance y colaboraciones en diseño y desarrollo web y en branding e identidad visual. Aquí está cómo contactarme, cuándo estoy disponible, cómo trabajo y mis términos.',
     },
-    write: { en: 'Write to me', es: 'Escribime' },
+    write: { en: 'Write to me', es: 'Escríbeme' },
     availability: { en: 'Availability', es: 'Disponibilidad' },
     pricing: { en: 'Base pricing', es: 'Precios base' },
     pricingIntro: {
       en: 'Starting prices for common project types. The final price depends on scope, timeline and features. Reach out for a quote tailored to your project.',
-      es: 'Precios iniciales para tipos de proyecto comunes. El precio final depende del alcance, el tiempo y las funcionalidades. Escribime para una cotización a la medida de tu proyecto.',
+      es: 'Precios iniciales para tipos de proyecto comunes. El precio final depende del alcance, el tiempo y las funcionalidades. Escríbeme para una cotización a la medida de tu proyecto.',
     },
     from: { en: 'From', es: 'Desde' },
     pricingNote: {

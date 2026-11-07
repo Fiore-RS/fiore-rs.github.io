@@ -122,6 +122,7 @@ export const projects: Project[] = [
     type: { en: 'Logo & Brand Identity', es: 'Logo e Identidad de Marca' },
     category: 'branding',
     image: '/projects/happy-home/cover.webp',
+    coverZoom: 1.4,
     timeline: { en: '1 week', es: '1 semana' },
     role: { en: 'Freelance Brand Designer', es: 'Diseñadora de Marca Freelance' },
     tools: { en: 'Figma, Adobe Creative Cloud', es: 'Figma, Adobe Creative Cloud' },
@@ -170,6 +171,7 @@ export const projects: Project[] = [
     type: { en: 'Event Branding', es: 'Identidad de Evento' },
     category: 'branding',
     image: '/projects/hack-gb/cover.webp',
+    coverZoom: 1.6,
     timeline: { en: '1 week', es: '1 semana' },
     role: { en: 'Design Team Support', es: 'Apoyo al Equipo de Diseño' },
     tools: {
@@ -275,12 +277,14 @@ export const projects: Project[] = [
       en: [
         'Teleo is a private, ad-free reading journal that I design and build on my own, and that my friends use every day. It started because no reading app had exactly what I wanted: some were missing something, others had so many options they became overwhelming. It began as a simple log just for me, and since August 2026 it has shipped 24 versions, each with release notes written for the people who use it.',
         'The app is organized like a notebook. La mesa shows what you are reading, your daily streak as a bookmark ribbon and your reading pace. El estante holds books and sagas on shelves, with filters by genre, mood, pace and tags; the genre and mood of a saga carry over to all its books. El cuaderno keeps reviews as ruled pages, quotes as notes with a folded corner, and content warnings. La bitácora gathers stats, purchases, and a monthly and yearly recap that can be shared as story cards. It also includes upcoming releases with a countdown, a Goodreads import, eight color themes, invitations with a QR code and a guided tutorial over the app itself.',
-        'It is an installable PWA built with React, TypeScript and Tailwind CSS, with Supabase handling auth, the Postgres database (row-level security per user), file storage and an Edge Function for account deletion, and TanStack Query managing the data. Before writing any code I designed the whole app in Figma, 51 screens in light and dark mode, along with a written specification. I also design its identity: the logo, the color themes and an editorial style where type, not icons, sets the hierarchy, carried all the way to the account emails, which are sent from its own address on my domain.',
+        'It is an installable PWA built with React, TypeScript and Tailwind CSS, with Supabase handling auth, the Postgres database (row-level security per user), file storage and an Edge Function for account deletion, and TanStack Query managing the data. Before writing any code I designed the whole app in Figma, 51 screens in light and dark mode, along with a written specification.',
+        'I also design its identity. The logo brings together several ideas tied to reading: the most obvious one is an open book, and the other is the T from Teleo, which is also a bookmark and, turned upside down, a sword, a nod to fantasy, one of the most popular genres. The main colors and the cover image on the home screen aim for the same feeling of comfort and warmth as reading a book in a cozy corner with your favorite drink. That identity carries into an editorial style where type, not icons, sets the hierarchy, all the way to the account emails, which are sent from its own address on my domain.',
       ],
       es: [
         'Teleo es un diario de lectura privado y sin anuncios que diseño y desarrollo sola, y que mis amistades usan todos los días. Nació porque ninguna app de lectura tenía exactamente lo que yo quería: a algunas les faltaba algo y otras tenían tantas opciones que abrumaban. Empezó como un registro sencillo solo para mí y, desde agosto de 2026, ya lleva 24 versiones publicadas, cada una con notas de novedades escritas para quienes la usan.',
         'La app está organizada como un cuaderno. La mesa muestra lo que estás leyendo, tu racha diaria como una cinta marcapáginas y tu ritmo de lectura. El estante guarda libros y sagas en repisas, con filtros por género, ánimo, ritmo y etiquetas; el género y el ánimo de una saga pasan a todos sus libros. El cuaderno reúne las reseñas como hojas rayadas, las citas como notas con la esquina doblada y los avisos de contenido. La bitácora junta estadísticas, compras y un resumen del mes y del año que se comparte como tarjetas tipo historia. Además tiene lanzamientos con cuenta atrás, importación desde Goodreads, ocho temas de color, invitaciones con código QR y un tutorial sobre la misma app.',
-        'Es una PWA instalable hecha con React, TypeScript y Tailwind CSS, con Supabase para la autenticación, la base de datos Postgres (con seguridad a nivel de fila por usuario), el almacenamiento de archivos y una Edge Function para eliminar la cuenta, y TanStack Query para manejar los datos. Antes de escribir código diseñé la app completa en Figma, con 51 pantallas en modo claro y oscuro, junto con una especificación escrita. También diseño su identidad: el logo, los temas de color y un estilo editorial donde la jerarquía la dan las letras y no los íconos, que llega hasta los correos de la cuenta, enviados desde su propia dirección en mi dominio.',
+        'Es una PWA instalable hecha con React, TypeScript y Tailwind CSS, con Supabase para la autenticación, la base de datos Postgres (con seguridad a nivel de fila por usuario), el almacenamiento de archivos y una Edge Function para eliminar la cuenta, y TanStack Query para manejar los datos. Antes de escribir código diseñé la app completa en Figma, con 51 pantallas en modo claro y oscuro, junto con una especificación escrita.',
+        'También diseño su identidad. El logo junta varias ideas ligadas a la lectura: la más evidente es un libro abierto, y la otra es la T de Teleo, que además es un marcapáginas y, si le das la vuelta, una espada, un guiño a la fantasía, uno de los géneros más populares. Los colores principales y la imagen de portada del inicio buscan transmitir la misma sensación de comodidad y calidez que da leer un libro en un rincón agradable con tu bebida favorita. Esa identidad sigue en un estilo editorial donde la jerarquía la dan las letras y no los íconos, y llega hasta los correos de la cuenta, enviados desde su propia dirección en mi dominio.',
       ],
     },
     gallery: [
@@ -323,8 +327,8 @@ export const projects: Project[] = [
     slug: 'sobres',
     year: '2026',
     blurb: {
-      en: 'Personal budgeting with the BCR envelope system. A visual tool that never connects to a bank.',
-      es: 'Presupuesto personal con el sistema de sobres del BCR. Una herramienta visual que nunca se conecta a un banco.',
+      en: 'My budget with the BCR envelope system: it splits every income and keeps each envelope’s balance, without ever connecting to a bank.',
+      es: 'Mi presupuesto con el sistema de sobres del BCR: reparte cada ingreso y lleva el saldo de cada sobre, sin conectarse nunca a un banco.',
     },
     title: { en: 'Zobro', es: 'Zobro' },
     type: { en: 'Web App (PWA)', es: 'Aplicación Web (PWA)' },
@@ -335,19 +339,19 @@ export const projects: Project[] = [
     tools: { en: 'React, TypeScript, Tailwind CSS, Vite PWA', es: 'React, TypeScript, Tailwind CSS, Vite PWA' },
     overview: {
       en: [
-        "Zobro is a personal budgeting app based on the BCR (Banco de Costa Rica) envelope system: it splits an income across the envelopes you choose, recalculating their priorities proportionally so they always add up to 100% of that income. It's a visual reference tool only, never connecting to a real bank or account.",
-        'Each envelope keeps a running balance instead of working like a one-off calculator, so priorities, balances, and movement history persist across incomes. Built as an installable PWA with React 19, TypeScript, and Tailwind CSS v4, storing everything in localStorage with no backend, following the same pattern as Teleo.',
-        'Deployed to GitHub Pages via GitHub Actions. Envelopes can be reordered by dragging, and each one gets its own color, icon and an optional savings goal. Balances can be corrected by hand without creating a movement, the data can be exported and imported as a backup, and the theme can be light, dark or follow the system. It has its own install icons and splash screens, and starts clean, with no sample data.',
+        'Zobro started with how I wanted to organize my own money using the BCR (Banco de Costa Rica) envelope system: every income is split across envelopes like rent, food or savings, according to the priority you give each one. Doing that math by hand every time was tedious, and I wanted to see at a glance how much was left in each envelope. It is a visual reference tool only: it never connects to a bank or a real account.',
+        'When an income comes in, you choose which envelopes to split it across and the app recalculates their priorities proportionally so they always add up to 100%, with rounding that makes the amounts match to the exact colón. Each envelope keeps a running balance and a history of movements, so it doesn’t work like a one-off calculator. Envelopes can be reordered by dragging, each one has its own color, icon and an optional goal, and balances can be corrected by hand without creating a movement.',
+        'It is an installable PWA built with React 19, TypeScript and Tailwind CSS v4, with no backend: the data lives on the phone in localStorage and can be exported and imported as a backup. Before writing any code I wrote a full specification of the logic and designed its seven screens. I also designed its identity: a green and sky-blue palette, colors I associate with money, an icon of an open envelope with three bills, its own install icons and splash screens, and light and dark mode.',
       ],
       es: [
-        'Zobro es una app personal de presupuesto basada en el sistema de sobres del BCR (Banco de Costa Rica): reparte un ingreso entre los sobres que elegís, recalculando sus prioridades proporcionalmente para que siempre sumen el 100% de ese ingreso. Es una herramienta visual de referencia, no se conecta a ningún banco ni cuenta real.',
-        'Cada sobre lleva un saldo acumulado en vez de funcionar como una calculadora puntual, así que las prioridades, saldos e historial de movimientos persisten entre ingresos. Construida como una PWA instalable con React 19, TypeScript y Tailwind CSS v4, guardando todo en localStorage sin backend, siguiendo el mismo patrón que Teleo.',
-        'Desplegada en GitHub Pages vía GitHub Actions. Los sobres se reordenan arrastrándolos y cada uno puede tener su color, su ícono y una meta opcional. Los saldos se corrigen a mano sin generar un movimiento, los datos se exportan e importan como respaldo, y el tema puede ser claro, oscuro o el del sistema. Tiene íconos y splash screens propios para instalarla, y arranca limpia, sin datos de ejemplo.',
+        'Zobro nació de cómo quería organizar mi propio dinero con el sistema de sobres del BCR (Banco de Costa Rica): cada ingreso se reparte entre sobres como alquiler, comida o ahorro, según la prioridad que le das a cada uno. Hacer esas cuentas a mano cada vez era tedioso, y quería ver de un vistazo cuánto me quedaba en cada sobre. Es una herramienta visual de referencia: nunca se conecta a un banco ni a una cuenta real.',
+        'Cuando entra un ingreso, eliges entre qué sobres repartirlo y la app recalcula sus prioridades proporcionalmente para que siempre sumen el 100%, con un redondeo que hace que los montos cuadren exactos al colón. Cada sobre lleva su saldo acumulado y su historial de movimientos, así que no funciona como una calculadora de un solo uso. Los sobres se reordenan arrastrándolos, cada uno tiene su color, su ícono y una meta opcional, y los saldos se pueden corregir a mano sin generar un movimiento.',
+        'Es una PWA instalable hecha con React 19, TypeScript y Tailwind CSS v4, sin backend: los datos viven en el teléfono, en localStorage, y se exportan e importan como respaldo. Antes de escribir código escribí una especificación completa de la lógica y diseñé sus siete pantallas. También diseñé su identidad: una paleta de verde y celeste, colores que asocio con la economía, un ícono de un sobre abierto con tres billetes, íconos y splash screens propios para instalarla, y modo claro y oscuro.',
       ],
     },
     summary: {
-      en: 'Designing Zobro meant translating a real financial mental model, the BCR envelope system, into clear interaction rules before writing any application logic: proportional recalculation of priorities so they always add up to 100%, rounding by largest remainder so amounts still sum exactly, and drag-and-drop reordering that stays honest to how people actually prioritize their money.',
-      es: 'Diseñar Zobro significó traducir un modelo mental financiero real, el sistema de sobres del BCR, en reglas de interacción claras antes de escribir cualquier lógica de la aplicación: recálculo proporcional de prioridades para que siempre sumen 100%, redondeo por mayor residuo para que los montos sigan sumando exacto, y reordenamiento por drag-and-drop que respeta cómo las personas priorizan de verdad su dinero.',
+      en: 'Zobro taught me to turn a mental model that already exists, the BCR envelope system, into clear rules before touching the interface: how priorities are recalculated so they always add up to 100%, how amounts are rounded so not a single colón gets lost, and how reordering the envelopes should feel just like deciding what matters most to me.',
+      es: 'Zobro me enseñó a traducir un modelo mental que ya existe, el sistema de sobres del BCR, en reglas claras antes de tocar la interfaz: cómo se recalculan las prioridades para que siempre sumen 100%, cómo se redondea para que no se pierda ni un colón, y cómo reordenar los sobres tiene que sentirse igual que decidir qué es más importante para mí.',
     },
     liveUrl: {
       url: 'https://fiorers.dev/zobro/',
@@ -381,16 +385,6 @@ export const projects: Project[] = [
         'Es una PWA instalable hecha con React 19, TypeScript y Tailwind CSS v4, sin backend: los datos viven en el teléfono, en localStorage, y las fotos en IndexedDB, y todo se exporta e importa como un solo respaldo .zip. La lógica de los cálculos está cubierta con pruebas en Vitest. También diseñé su identidad: una paleta de cinco colores, un ícono de una caja en camino, una pantalla de carga que coincide con los splash de iOS, y modo claro y oscuro.',
       ],
     },
-    gallery: [
-      {
-        image: '/projects/preordi/app-icon.webp',
-        alt: { en: 'Preordi app icon at different sizes, from the home screen to the browser tab', es: 'Ícono de la app Preordi en distintos tamaños, de la pantalla de inicio a la pestaña del navegador' },
-      },
-      {
-        image: '/projects/preordi/palette.webp',
-        alt: { en: 'Preordi color palette: orange, yellow, paper, sky blue and navy', es: 'Paleta de Preordi: naranja, amarillo, papel, celeste y marino' },
-      },
-    ],
     summary: {
       en: 'Preordi taught me to start from the money and the dates, not from the screens: first deciding exactly how a balance, an overdue arrival or a monthly amount is calculated, testing those rules, and only then designing a calm interface that answers at a glance how much I need and when.',
       es: 'Preordi me enseñó a empezar por el dinero y las fechas, no por las pantallas: primero decidir exactamente cómo se calcula un saldo, una llegada atrasada o lo que toca pagar cada mes, probar esas reglas, y solo después diseñar una interfaz tranquila que responda de un vistazo cuánto necesito y cuándo.',

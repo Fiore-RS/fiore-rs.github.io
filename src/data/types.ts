@@ -21,6 +21,11 @@ export interface Project {
   category: ProjectCategory
   /** Portada real (proyectos de branding). */
   image?: string
+  /**
+   * Acercamiento de la portada en las tarjetas del carrusel y en Archivo (p. ej. 1.5), para
+   * portadas donde el logo queda pequeño. Recorta los bordes del fondo. Por defecto 1.
+   */
+  coverZoom?: number
   /** Portada generada para apps (cuando no hay `image`). */
   cover?: AppCoverVariant
   timeline: Localized

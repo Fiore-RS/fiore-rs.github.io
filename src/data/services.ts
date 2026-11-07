@@ -79,7 +79,7 @@ export const workProcess: { title: Localized; detail: Localized }[] = [
     title: { en: 'First conversation', es: 'Conversación inicial' },
     detail: {
       en: 'You tell me about your idea, timeline and budget, and we figure out what your project needs.',
-      es: 'Me contás tu idea, plazos y presupuesto, y definimos juntos qué necesita tu proyecto.',
+      es: 'Me cuentas tu idea, plazos y presupuesto, y definimos juntos qué necesita tu proyecto.',
     },
   },
   {
@@ -107,7 +107,7 @@ export const workProcess: { title: Localized; detail: Localized }[] = [
     title: { en: 'Delivery', es: 'Entrega' },
     detail: {
       en: 'With the final payment, you receive the final files or your site goes live, ready to use.',
-      es: 'Con el pago final recibís los archivos finales o tu sitio sale en línea, listo para usar.',
+      es: 'Con el pago final recibes los archivos finales o tu sitio sale en línea, listo para usar.',
     },
   },
 ]
